@@ -84,7 +84,7 @@ main {
 .intro h1 {
     margin: 0 0 30px;
     font-family: 'EB Garamond', serif;
-    font-size: clamp(64px, 9vw, 140px);
+    font-size: clamp(55px, 8vw, 120px);
     line-height: 0.85;
     font-weight: 400;
     letter-spacing: -0.04em;
@@ -176,7 +176,7 @@ main {
 .about-text h1 {
     margin: 0 0 40px;
     font-family: 'EB Garamond', serif;
-    font-size: clamp(60px, 8vw, 120px);
+    font-size: clamp(50px, 7vw, 100px);
     line-height: 0.85;
     font-weight: 400;
     letter-spacing: -0.04em;
@@ -217,7 +217,7 @@ main {
     max-width: 900px;
     margin: 0;
     font-family: 'EB Garamond', serif;
-    font-size: clamp(55px, 8vw, 120px);
+    font-size: clamp(48px, 7vw, 105px);
     line-height: 0.9;
     font-weight: 400;
     letter-spacing: -0.04em;
@@ -379,7 +379,7 @@ footer {
     }
 
     .intro h1 {
-        font-size: 65px;
+        font-size: 58px;
     }
 
     .projects {
@@ -399,6 +399,10 @@ footer {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 50px;
+    }
+
+    .about-text h1 {
+        font-size: 55px;
     }
 
     .project-section {
