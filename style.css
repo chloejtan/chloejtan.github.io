@@ -24,9 +24,20 @@ body {
     line-height: 1.5;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 
 /* ---------------------------------------------------------
-   TYPOGRAPHY
+   HEADINGS / NAVIGATION
    --------------------------------------------------------- */
 
 h1,
@@ -44,21 +55,6 @@ h1,
 h2,
 h3 {
     font-weight: 400;
-}
-
-p {
-    max-width: 700px;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 
@@ -117,98 +113,23 @@ main {
 
 
 /* ---------------------------------------------------------
-   HOMEPAGE INTRO
+   ABOUT PAGE
    --------------------------------------------------------- */
 
-.intro {
-    min-height: 65vh;
-
-    padding: 100px 40px 80px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.intro h1 {
-    font-size: clamp(64px, 10vw, 150px);
-    font-weight: 400;
-    line-height: 0.9;
-    letter-spacing: -0.055em;
-
-    max-width: 1100px;
-}
-
-.intro p {
-    margin-top: 50px;
-
-    font-size: 18px;
-    line-height: 1.45;
-
-    max-width: 460px;
+.about-page {
+    padding-bottom: 120px;
 }
 
 
 /* ---------------------------------------------------------
-   PROJECT GRID — HOMEPAGE
+   ABOUT INTRO
    --------------------------------------------------------- */
 
-.projects {
-    padding: 0 40px 100px;
+.about-intro {
+    padding: 120px 40px 100px;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 80px 30px;
+    border-bottom: 1px solid #d8d8d5;
 }
-
-.project {
-    display: block;
-}
-
-.project-image {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-
-    background: #dcdcd8;
-
-    overflow: hidden;
-
-    transition: opacity 0.3s ease;
-}
-
-.project:hover .project-image {
-    opacity: 0.75;
-}
-
-.project-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-
-    padding-top: 15px;
-
-    border-top: 1px solid #111;
-
-    margin-top: 12px;
-
-    gap: 20px;
-}
-
-.project-title {
-    font-size: 15px;
-}
-
-.project-type {
-    font-size: 12px;
-    color: #666;
-    text-align: right;
-}
-
-
-/* ---------------------------------------------------------
-   SECTION LABELS
-   --------------------------------------------------------- */
 
 .section-label {
     font-size: 11px;
@@ -217,81 +138,7 @@ main {
     color: #666;
 }
 
-
-/* ---------------------------------------------------------
-   ABOUT PAGE
-   --------------------------------------------------------- */
-
-.about-page {
-    padding-bottom: 120px;
-}
-
-.about-intro {
-    padding: 120px 40px 100px;
-
-    border-bottom: 1px solid #d8d8d5;
-}
-
 .about-intro h1 {
-    margin-top: 60px;
-
-    font-size: clamp(48px, 7vw, 105px);
-    font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -0.045em;
-
-    max-width: 1050px;
-}
-
-.about-content {
-    padding: 90px 40px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    gap: 80px;
-}
-
-.about-column p {
-    font-size: 17px;
-    line-height: 1.6;
-
-    margin-bottom: 28px;
-
-    max-width: 580px;
-}
-
-.about-statement {
-    padding: 80px 40px;
-
-    border-top: 1px solid #d8d8d5;
-    border-bottom: 1px solid #d8d8d5;
-}
-
-.about-statement p {
-    font-size: clamp(28px, 4vw, 55px);
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-
-    max-width: 900px;
-}
-
-
-/* ---------------------------------------------------------
-   PROJECTS PAGE
-   --------------------------------------------------------- */
-
-.projects-page {
-    padding-bottom: 120px;
-}
-
-.projects-intro {
-    padding: 120px 40px 100px;
-
-    border-bottom: 1px solid #d8d8d5;
-}
-
-.projects-intro h1 {
     margin-top: 60px;
 
     font-size: clamp(60px, 8vw, 120px);
@@ -299,252 +146,82 @@ main {
     line-height: 0.92;
     letter-spacing: -0.05em;
 
-    max-width: 1000px;
-}
-
-.project-category {
-    padding: 80px 40px 0;
-}
-
-.category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-
-    padding-bottom: 15px;
-
-    border-bottom: 1px solid #111;
-
-    margin-bottom: 30px;
-}
-
-.category-header h2 {
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.category-header span {
-    font-size: 11px;
-    color: #666;
-}
-
-.project-list-item {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-
-    gap: 30px;
-
-    padding-bottom: 60px;
-    margin-bottom: 60px;
-
-    border-bottom: 1px solid #d8d8d5;
-}
-
-.project-list-image {
-    aspect-ratio: 16 / 10;
-
-    background: #dcdcd8;
-
-    overflow: hidden;
-
-    transition: opacity 0.3s ease;
-}
-
-.project-list-item:hover .project-list-image {
-    opacity: 0.7;
-}
-
-.project-list-info {
-    padding-top: 5px;
-}
-
-.project-list-info h3 {
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-
-    margin-bottom: 12px;
-}
-
-.project-list-info p {
-    font-size: 16px;
-    color: #666;
+    max-width: 1050px;
 }
 
 
 /* ---------------------------------------------------------
-   INDIVIDUAL PROJECT PAGE
+   ABOUT CONTENT
    --------------------------------------------------------- */
 
-.project-page {
-    padding-bottom: 150px;
-}
-
-.project-hero {
-    padding: 110px 40px 90px;
-
-    border-bottom: 1px solid #d8d8d5;
-}
-
-.project-hero h1 {
-    margin-top: 50px;
-
-    font-size: clamp(60px, 9vw, 140px);
-    font-weight: 400;
-    line-height: 0.88;
-    letter-spacing: -0.055em;
-
-    max-width: 1200px;
-}
-
-.project-hero h2 {
-    margin-top: 20px;
-
-    font-size: clamp(25px, 3vw, 45px);
-    font-weight: 400;
-    line-height: 1;
-
-    color: #555;
-}
-
-.project-location {
-    margin-top: 50px;
-
-    font-size: 16px;
-    color: #666;
-}
-
-
-/* ---------------------------------------------------------
-   PROJECT HERO IMAGE
-   --------------------------------------------------------- */
-
-.project-hero-image {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-
-    background: #dcdcd8;
-}
-
-
-/* ---------------------------------------------------------
-   PROJECT TEXT SECTIONS
-   --------------------------------------------------------- */
-
-.project-section {
-    padding: 110px 40px;
+.about-content {
+    padding: 100px 40px;
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
 
-    gap: 80px;
+    gap: 100px;
 
-    border-bottom: 1px solid #d8d8d5;
+    align-items: start;
 }
 
-.project-section-title {
-    padding-top: 5px;
-}
 
-.project-section-text p {
-    font-size: 17px;
+/* ---------------------------------------------------------
+   ABOUT TEXT
+   --------------------------------------------------------- */
+
+.about-column p {
+    font-size: 18px;
     line-height: 1.6;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 
-    max-width: 760px;
+    max-width: 600px;
 }
 
-.project-section-text p:last-child {
+.about-column p:last-child {
     margin-bottom: 0;
 }
 
 
 /* ---------------------------------------------------------
-   RESEARCH QUESTION
+   ABOUT PHOTO
    --------------------------------------------------------- */
 
-.research-question {
-    background: #eaeae6;
-}
-
-.large-text {
-    font-size: clamp(28px, 4vw, 52px) !important;
-    line-height: 1.12 !important;
-    letter-spacing: -0.025em;
-
-    max-width: 950px !important;
-}
-
-
-/* ---------------------------------------------------------
-   IMAGE PLACEHOLDERS
-   --------------------------------------------------------- */
-
-.image-placeholder {
+.about-photo {
     width: 100%;
+    max-width: 520px;
 
-    background: #dcdcd8;
+    margin-left: auto;
+}
 
-    aspect-ratio: 4 / 3;
+.about-photo img {
+    width: 100%;
+    height: auto;
+
+    display: block;
 }
 
 
 /* ---------------------------------------------------------
-   IMAGE GRIDS
+   ABOUT STATEMENT
    --------------------------------------------------------- */
 
-.image-grid {
-    padding: 0 40px;
-
-    display: grid;
-
-    gap: 20px;
-}
-
-.image-grid.two-column {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.image-grid.three-column {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.image-grid.full-width {
-    grid-template-columns: 1fr;
-}
-
-.image-grid.full-width .image-placeholder {
-    aspect-ratio: 16 / 9;
-}
-
-
-/* ---------------------------------------------------------
-   PROJECT END
-   --------------------------------------------------------- */
-
-.project-end {
-    padding: 150px 40px;
-
-    text-align: center;
+.about-statement {
+    padding: 100px 40px;
 
     border-top: 1px solid #d8d8d5;
+    border-bottom: 1px solid #d8d8d5;
 }
 
-.project-end p:first-child {
-    font-size: clamp(40px, 6vw, 90px);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
-}
+.about-statement p {
+    font-family: Arial, Helvetica, sans-serif;
 
-.project-end p:last-child {
-    margin-top: 15px;
+    font-size: clamp(32px, 4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
 
-    font-size: 18px;
-    color: #666;
+    max-width: 950px;
 }
 
 
@@ -561,24 +238,6 @@ footer {
     color: #666;
 
     letter-spacing: 0.03em;
-}
-
-
-/* ---------------------------------------------------------
-   HOVER EFFECTS
-   --------------------------------------------------------- */
-
-.project-list-item,
-.project {
-    cursor: pointer;
-}
-
-.project-list-item h3 {
-    transition: opacity 0.2s ease;
-}
-
-.project-list-item:hover h3 {
-    opacity: 0.5;
 }
 
 
@@ -601,42 +260,7 @@ footer {
     }
 
 
-    /* Homepage */
-
-    .intro {
-        min-height: 70vh;
-        padding: 70px 20px 60px;
-    }
-
-    .intro h1 {
-        font-size: clamp(52px, 16vw, 90px);
-    }
-
-    .intro p {
-        margin-top: 35px;
-        font-size: 16px;
-    }
-
-
-    .projects {
-        padding: 0 20px 70px;
-
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-    }
-
-    .project-info {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .project-type {
-        text-align: left;
-    }
-
-
-    /* About */
+    /* About intro */
 
     .about-intro {
         padding: 80px 20px 70px;
@@ -644,112 +268,48 @@ footer {
 
     .about-intro h1 {
         margin-top: 40px;
-        font-size: clamp(45px, 13vw, 75px);
+
+        font-size: clamp(52px, 14vw, 85px);
+
+        line-height: 0.94;
     }
+
+
+    /* About content */
 
     .about-content {
-        padding: 60px 20px;
+        padding: 65px 20px;
 
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 60px;
     }
+
+
+    /* About text */
 
     .about-column p {
-        font-size: 16px;
+        font-size: 17px;
+        line-height: 1.55;
     }
+
+
+    /* About photo */
+
+    .about-photo {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+
+    /* Statement */
 
     .about-statement {
-        padding: 60px 20px;
-    }
-
-
-    /* Projects */
-
-    .projects-intro {
-        padding: 80px 20px 70px;
-    }
-
-    .projects-intro h1 {
-        margin-top: 40px;
-        font-size: clamp(52px, 14vw, 80px);
-    }
-
-    .project-category {
-        padding: 60px 20px 0;
-    }
-
-    .project-list-item {
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-
-        padding-bottom: 40px;
-        margin-bottom: 40px;
-    }
-
-    .project-list-info h3 {
-        font-size: 24px;
-    }
-
-
-    /* Individual project */
-
-    .project-hero {
-        padding: 80px 20px 60px;
-    }
-
-    .project-hero h1 {
-        margin-top: 40px;
-
-        font-size: clamp(52px, 14vw, 90px);
-    }
-
-    .project-hero h2 {
-        font-size: 26px;
-    }
-
-    .project-location {
-        margin-top: 35px;
-    }
-
-    .project-hero-image {
-        aspect-ratio: 4 / 3;
-    }
-
-
-    .project-section {
         padding: 70px 20px;
-
-        grid-template-columns: 1fr;
-
-        gap: 30px;
     }
 
-    .project-section-text p {
-        font-size: 16px;
-    }
-
-    .large-text {
-        font-size: 28px !important;
-    }
-
-
-    /* Images */
-
-    .image-grid {
-        padding: 0 20px;
-
-        gap: 10px;
-    }
-
-    .image-grid.two-column,
-    .image-grid.three-column {
-        grid-template-columns: 1fr;
-    }
-
-    .image-placeholder {
-        aspect-ratio: 4 / 3;
+    .about-statement p {
+        font-size: 32px;
     }
 
 
