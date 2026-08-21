@@ -1,21 +1,12 @@
-/* ========================================
-   CHLOE TAN — ARCHITECTURE PORTFOLIO
-   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
 
 
-/* GOOGLE FONT
-   EB Garamond is loaded in each HTML page.
-*/
-
-
-/* ========================================
-   RESET
-   ======================================== */
+/* =========================
+   GENERAL
+========================= */
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 html {
@@ -23,33 +14,35 @@ html {
 }
 
 body {
+    margin: 0;
     background: #f8f9f4;
-    color: #171717;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
+    color: #111111;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
-/* ========================================
+/* =========================
    HEADER
-   ======================================== */
+========================= */
 
 header {
     width: 100%;
     padding: 28px 40px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background: #f8f9f4;
 }
 
 .logo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
     letter-spacing: 0.08em;
 }
 
@@ -59,12 +52,9 @@ nav {
 }
 
 nav a {
-    color: #171717;
-    text-decoration: none;
-
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: 18px;
-
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
     transition: opacity 0.2s ease;
 }
 
@@ -73,102 +63,61 @@ nav a:hover {
 }
 
 
-/* ========================================
-   GENERAL TYPOGRAPHY
-   ======================================== */
-
-h1,
-h2,
-h3 {
-    font-weight: 400;
-}
-
-p {
-    font-family: "EB Garamond", Garamond, serif;
-}
-
-.section-label {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-
-/* ========================================
-   HOME / INDEX
-   ======================================== */
+/* =========================
+   MAIN
+========================= */
 
 main {
-    width: 100%;
+    padding: 80px 40px 120px;
 }
 
+
+/* =========================
+   INTRO
+========================= */
+
 .intro {
-    padding: 120px 40px 100px;
-    max-width: 1100px;
+    max-width: 900px;
+    margin-bottom: 140px;
 }
 
 .intro h1 {
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: clamp(64px, 9vw, 150px);
-    line-height: 0.88;
+    margin: 0 0 30px;
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(64px, 9vw, 140px);
+    line-height: 0.85;
+    font-weight: 400;
     letter-spacing: -0.04em;
 }
 
 .intro p {
-    max-width: 430px;
-    margin-top: 45px;
-
-    font-size: 22px;
-    line-height: 1.3;
+    max-width: 480px;
+    margin: 0;
+    font-family: 'EB Garamond', serif;
+    font-size: 21px;
+    line-height: 1.35;
 }
 
 
-/* ========================================
-   PAGE INTRO
-   ======================================== */
-
-.page-intro {
-    padding: 100px 40px 80px;
-}
-
-.page-intro h1 {
-    margin-top: 18px;
-
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: clamp(60px, 9vw, 140px);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-}
-
-
-/* ========================================
+/* =========================
    PROJECT GRID
-   ======================================== */
+========================= */
 
 .projects {
-    width: 100%;
-    padding: 0 40px 100px;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 70px 28px;
+    gap: 100px 30px;
 }
 
 .project {
     display: block;
-
-    color: #171717;
-    text-decoration: none;
 }
 
 .project-image {
     width: 100%;
     aspect-ratio: 4 / 3;
-
-    background: #e4e5e0;
-
+    background: #e9ebe5;
+    margin-bottom: 18px;
     overflow: hidden;
 }
 
@@ -176,9 +125,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     display: block;
-
     transition: transform 0.5s ease;
 }
 
@@ -187,279 +134,231 @@ main {
 }
 
 .project-info {
-    padding-top: 14px;
-
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-
     gap: 20px;
 }
 
 .project-title {
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: 24px;
-    line-height: 1.1;
+    font-family: 'EB Garamond', serif;
+    font-size: 21px;
 }
 
 .project-type {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.08em;
+    font-size: 11px;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-
-    text-align: right;
 }
 
 
-/* ========================================
+/* =========================
    ABOUT PAGE
-   ======================================== */
+========================= */
 
-.about-page {
-    padding: 100px 40px;
-}
-
-.about-content {
-    max-width: 1100px;
-}
-
-.about-content h1 {
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: clamp(60px, 9vw, 140px);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
+.about {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-grid {
-    margin-top: 100px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-}
-
-.about-image {
-    width: 100%;
+    align-items: start;
 }
 
 .about-image img {
     width: 100%;
-    height: auto;
     display: block;
 }
 
-.about-text {
-    max-width: 550px;
+.about-text h1 {
+    margin: 0 0 40px;
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(60px, 8vw, 120px);
+    line-height: 0.85;
+    font-weight: 400;
+    letter-spacing: -0.04em;
 }
 
 .about-text p {
-    margin-bottom: 25px;
-
-    font-size: 21px;
-    line-height: 1.35;
+    max-width: 560px;
+    margin: 0 0 24px;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    line-height: 1.45;
 }
 
 
-/* ========================================
+/* =========================
    PROJECT PAGE
-   ======================================== */
+========================= */
 
 .project-page {
-    width: 100%;
+    padding-top: 60px;
 }
 
-
-/* PROJECT HERO */
-
 .project-hero {
-    padding: 110px 40px 80px;
-    max-width: 1200px;
+    max-width: 1000px;
+    margin: 0 auto 100px;
+}
+
+.section-label {
+    margin-bottom: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .project-hero h1 {
-    max-width: 1050px;
-
-    margin-top: 25px;
-
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: clamp(55px, 8vw, 125px);
+    max-width: 900px;
+    margin: 0;
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(55px, 8vw, 120px);
     line-height: 0.9;
-    letter-spacing: -0.045em;
+    font-weight: 400;
+    letter-spacing: -0.04em;
 }
 
 .project-location {
-    margin-top: 35px;
-
-    font-family: "EB Garamond", Garamond, serif;
-    font-size: 20px;
+    margin-top: 30px;
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
 }
-
-
-/* HERO IMAGE */
 
 .project-hero-image {
     width: 100%;
-    padding: 0 40px 100px;
+    margin-bottom: 140px;
 }
 
 .project-hero-image img {
     width: 100%;
-    height: auto;
-
     display: block;
 }
 
 
-/* ========================================
+/* =========================
    PROJECT SECTIONS
-   ======================================== */
+========================= */
 
 .project-section {
-    padding: 100px 40px;
-
+    max-width: 1200px;
+    margin: 0 auto 140px;
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 60px;
-
-    border-top: 1px solid #d7d8d2;
 }
 
 .project-section-text {
-    max-width: 700px;
+    max-width: 750px;
 }
 
 .project-section-text p {
-    margin-bottom: 25px;
-
-    font-size: 21px;
-    line-height: 1.35;
+    margin: 0 0 28px;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    line-height: 1.45;
 }
 
-.project-section-text p:last-child {
-    margin-bottom: 0;
-}
-
-.large-text {
-    font-size: clamp(28px, 3.2vw, 48px) !important;
-    line-height: 1.05 !important;
+.project-section-text .large-text {
+    font-size: 30px;
+    line-height: 1.2;
 }
 
 
-/* ========================================
-   RESEARCH QUESTION
-   ======================================== */
-
-.research-question {
-    padding-top: 120px;
-    padding-bottom: 120px;
-}
-
-.research-question .project-section-text {
-    max-width: 900px;
-}
-
-
-/* ========================================
-   IMAGE PLACEHOLDERS
-   ======================================== */
-
-.image-placeholder {
-    width: 100%;
-    min-height: 400px;
-
-    background: #e4e5e0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #8a8b85;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-
-/* ========================================
+/* =========================
    IMAGE GRIDS
-   ======================================== */
+========================= */
 
 .image-grid {
-    padding: 0 40px 100px;
-
+    max-width: 1400px;
+    margin: 0 auto 140px;
     display: grid;
     gap: 20px;
 }
 
-.image-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.full-width {
-    grid-template-columns: 1fr;
-}
-
-.two-column {
+.image-grid.two-column {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.three-column {
+.image-grid.three-column {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.image-grid.full-width {
+    grid-template-columns: 1fr;
+}
 
-/* ========================================
+.image-placeholder {
+    min-height: 400px;
+    background: #e9ebe5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
    PROJECT END
-   ======================================== */
+========================= */
 
 .project-end {
-    padding: 140px 40px;
-
-    border-top: 1px solid #d7d8d2;
-
+    max-width: 1200px;
+    margin: 180px auto 80px;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-}
-
-.project-end p {
-    font-size: 18px;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
 }
 
 
-/* ========================================
+/* =========================
    FOOTER
-   ======================================== */
+========================= */
 
 footer {
-    padding: 40px;
+    width: 100%;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #dfe1db;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+}
 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.footer-left {
+    display: block;
+}
 
-    border-top: 1px solid #d7d8d2;
+.footer-right {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-right a {
+    transition: opacity 0.2s ease;
+}
+
+.footer-right a:hover {
+    opacity: 0.5;
 }
 
 
-/* ========================================
-   LINKS
-   ======================================== */
-
-a {
-    color: inherit;
-}
-
-
-/* ========================================
+/* =========================
    MOBILE
-   ======================================== */
+========================= */
 
 @media (max-width: 700px) {
 
@@ -468,141 +367,63 @@ a {
     }
 
     nav {
-        gap: 20px;
+        gap: 18px;
     }
 
-    nav a {
-        font-size: 17px;
+    main {
+        padding: 60px 20px 80px;
     }
-
 
     .intro {
-        padding: 80px 20px 70px;
+        margin-bottom: 90px;
     }
 
     .intro h1 {
-        font-size: 70px;
+        font-size: 65px;
     }
-
-    .intro p {
-        font-size: 19px;
-        margin-top: 35px;
-    }
-
-
-    .page-intro {
-        padding: 70px 20px 60px;
-    }
-
-    .page-intro h1 {
-        font-size: 70px;
-    }
-
 
     .projects {
-        padding: 0 20px 70px;
-
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 70px;
     }
 
     .project-info {
         display: block;
     }
 
-    .project-title {
-        display: block;
-        font-size: 23px;
-    }
-
     .project-type {
         display: block;
-        margin-top: 7px;
-        text-align: left;
-    }
-
-
-    .about-page {
-        padding: 70px 20px;
-    }
-
-    .about-content h1 {
-        font-size: 70px;
+        margin-top: 6px;
     }
 
     .about-grid {
-        margin-top: 60px;
-
         grid-template-columns: 1fr;
         gap: 50px;
     }
 
-    .about-text p {
-        font-size: 19px;
-    }
-
-
-    .project-hero {
-        padding: 75px 20px 55px;
-    }
-
-    .project-hero h1 {
-        font-size: 65px;
-    }
-
-    .project-location {
-        font-size: 18px;
-    }
-
-
-    .project-hero-image {
-        padding: 0 20px 70px;
-    }
-
-
     .project-section {
-        padding: 70px 20px;
-
         grid-template-columns: 1fr;
         gap: 30px;
+        margin-bottom: 90px;
     }
 
-    .project-section-text p {
-        font-size: 19px;
-    }
-
-    .large-text {
-        font-size: 32px !important;
-    }
-
-
-    .image-grid {
-        padding: 0 20px 70px;
-    }
-
-    .two-column,
-    .three-column {
+    .image-grid.two-column,
+    .image-grid.three-column {
         grid-template-columns: 1fr;
     }
 
-    .image-placeholder {
-        min-height: 280px;
-    }
-
-
     .project-end {
-        padding: 90px 20px;
-
         display: block;
+        margin-top: 100px;
     }
-
-    .project-end p + p {
-        margin-top: 10px;
-    }
-
 
     footer {
-        padding: 30px 20px;
+        padding: 25px 20px;
+        align-items: flex-start;
+        gap: 20px;
     }
 
+    .footer-right {
+        gap: 16px;
+    }
 }
