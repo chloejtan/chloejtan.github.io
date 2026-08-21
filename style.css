@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
 
 /* =========================
@@ -18,7 +18,7 @@ body {
     padding: 0;
     background: #f8f9f4;
     color: #171717;
-    font-family: "DM Sans", sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
 }
 
@@ -30,6 +30,28 @@ a {
 img {
     display: block;
     max-width: 100%;
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3 {
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+}
+
+p,
+nav,
+.logo,
+.section-label,
+.project-link,
+.footer-left,
+.footer-right {
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 
@@ -46,7 +68,6 @@ header {
 }
 
 .logo {
-    font-family: "DM Sans", sans-serif;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.04em;
@@ -58,8 +79,7 @@ nav {
 }
 
 nav a {
-    font-family: "EB Garamond", serif;
-    font-size: 17px;
+    font-size: 15px;
     transition: opacity 0.2s ease;
 }
 
@@ -83,17 +103,14 @@ nav a:hover {
 
 .home-label,
 .section-label {
-    font-family: "EB Garamond", serif;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 0.04em;
     margin-bottom: 22px;
 }
 
 .home-intro h1 {
     margin: 0 0 30px;
-    font-family: "DM Sans", sans-serif;
     font-size: clamp(48px, 7vw, 92px);
-    font-weight: 400;
     line-height: 0.95;
     letter-spacing: -0.045em;
 }
@@ -101,9 +118,8 @@ nav a:hover {
 .home-intro p {
     max-width: 520px;
     margin: 0;
-    font-family: "EB Garamond", serif;
-    font-size: 22px;
-    line-height: 1.35;
+    font-size: 18px;
+    line-height: 1.4;
 }
 
 
@@ -141,23 +157,19 @@ nav a:hover {
 
 .home-project-info h2 {
     margin: 0 0 20px;
-    font-family: "DM Sans", sans-serif;
     font-size: clamp(28px, 3vw, 44px);
-    font-weight: 400;
     line-height: 1.05;
     letter-spacing: -0.03em;
 }
 
 .home-project-info p {
     margin: 0 0 28px;
-    font-family: "EB Garamond", serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.4;
 }
 
 .project-link {
-    font-family: "EB Garamond", serif;
-    font-size: 17px;
+    font-size: 14px;
     border-bottom: 1px solid #171717;
     padding-bottom: 3px;
 }
@@ -181,8 +193,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "EB Garamond", serif;
-    font-size: 21px;
+    font-size: 15px;
 }
 
 .home-projects-link a:hover {
@@ -206,7 +217,6 @@ nav a:hover {
 .projects-intro h1 {
     margin: 0;
     font-size: clamp(48px, 7vw, 90px);
-    font-weight: 400;
     line-height: 0.95;
     letter-spacing: -0.045em;
 }
@@ -230,20 +240,17 @@ nav a:hover {
 }
 
 .project-number {
-    font-family: "EB Garamond", serif;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .project-list-title {
-    font-family: "DM Sans", sans-serif;
+    font-family: "EB Garamond", serif;
     font-size: clamp(24px, 3vw, 38px);
-    font-weight: 400;
     line-height: 1.05;
 }
 
 .project-list-meta {
-    font-family: "EB Garamond", serif;
-    font-size: 17px;
+    font-size: 14px;
     text-align: right;
 }
 
@@ -264,9 +271,7 @@ nav a:hover {
 .project-hero h1 {
     margin: 0;
     max-width: 950px;
-    font-family: "DM Sans", sans-serif;
     font-size: clamp(44px, 7vw, 90px);
-    font-weight: 400;
     line-height: 0.95;
     letter-spacing: -0.045em;
 }
@@ -284,9 +289,8 @@ nav a:hover {
 
 .project-section-text p {
     margin: 0;
-    font-family: "EB Garamond", serif;
-    font-size: 23px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 
@@ -299,34 +303,35 @@ nav a:hover {
 }
 
 .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.75fr);
     gap: 100px;
-    align-items: start;
+    align-items: center;
 }
 
 .about-text {
-    max-width: 650px;
+    max-width: 600px;
 }
 
 .about-text h1 {
-    margin: 0 0 35px;
-    font-size: clamp(48px, 7vw, 90px);
-    font-weight: 400;
+    margin: 0 0 40px;
+    font-size: clamp(52px, 7vw, 90px);
     line-height: 0.95;
     letter-spacing: -0.045em;
 }
 
 .about-text p {
-    font-family: "EB Garamond", serif;
-    font-size: 22px;
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.55;
     margin: 0 0 25px;
+    max-width: 520px;
 }
 
 .about-image {
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
 }
 
 .about-image img {
@@ -351,8 +356,7 @@ footer {
 
 .footer-left,
 .footer-right {
-    font-family: "EB Garamond", serif;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .footer-right {
@@ -429,6 +433,11 @@ footer {
     .about-content {
         grid-template-columns: 1fr;
         gap: 60px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        max-width: 600px;
     }
 
     .about-image {
