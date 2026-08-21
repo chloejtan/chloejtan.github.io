@@ -1,459 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
-
-
-/* =========================
-   GENERAL
-========================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background: #f8f9f4;
-    color: #171717;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 400;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-h1,
-h2,
-h3 {
-    font-family: "EB Garamond", serif;
-    font-weight: 400;
-}
-
-p,
-nav,
-.logo,
-.section-label,
-.project-link,
-.footer-left,
-.footer-right {
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    width: 100%;
-    padding: 28px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-}
-
-nav {
-    display: flex;
-    gap: 32px;
-}
-
-nav a {
-    font-size: 15px;
-    transition: opacity 0.2s ease;
-}
-
-nav a:hover {
-    opacity: 0.5;
-}
-
-
-/* =========================
-   HOME
-========================= */
-
-.home {
-    padding: 80px 40px 120px;
-}
-
-.home-intro {
-    max-width: 760px;
-    margin-bottom: 150px;
-}
-
-.home-label,
-.section-label {
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    margin-bottom: 22px;
-}
-
-.home-intro h1 {
-    margin: 0 0 30px;
-    font-size: clamp(48px, 7vw, 92px);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
-}
-
-.home-intro p {
-    max-width: 520px;
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.4;
-}
-
-
-/* =========================
-   FEATURED PROJECT
-========================= */
-
-.home-project {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
-    gap: 70px;
-    align-items: center;
-    max-width: 1300px;
-}
-
-.home-project-image {
-    width: 100%;
-    max-width: 850px;
-}
-
-.home-project-image a {
-    display: block;
-}
-
-.home-project-image img {
-    width: 100%;
-    height: auto;
-    max-height: 650px;
-    object-fit: cover;
-}
-
-.home-project-info {
-    max-width: 360px;
-}
-
-.home-project-info h2 {
-    margin: 0 0 20px;
-    font-size: clamp(28px, 3vw, 44px);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-}
-
-.home-project-info p {
-    margin: 0 0 28px;
-    font-size: 16px;
-    line-height: 1.4;
-}
-
-.project-link {
-    font-size: 14px;
-    border-bottom: 1px solid #171717;
-    padding-bottom: 3px;
-}
-
-.project-link:hover {
-    opacity: 0.5;
-}
-
-
-/* =========================
-   VIEW ALL PROJECTS
-========================= */
-
-.home-projects-link {
-    margin-top: 150px;
-    border-top: 1px solid #171717;
-}
-
-.home-projects-link a {
-    padding: 22px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 15px;
-}
-
-.home-projects-link a:hover {
-    opacity: 0.5;
-}
-
-
-/* =========================
-   PROJECTS PAGE
-========================= */
-
-.projects-page {
-    padding: 80px 40px 120px;
-}
-
-.projects-intro {
-    max-width: 900px;
-    margin-bottom: 120px;
-}
-
-.projects-intro h1 {
-    margin: 0;
-    font-size: clamp(48px, 7vw, 90px);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
-}
-
-.project-list {
-    border-top: 1px solid #171717;
-}
-
-.project-list-item {
-    display: grid;
-    grid-template-columns: 60px 1fr auto;
-    gap: 30px;
-    align-items: baseline;
-    padding: 28px 0;
-    border-bottom: 1px solid #171717;
-    transition: opacity 0.2s ease;
-}
-
-.project-list-item:hover {
-    opacity: 0.5;
-}
-
-.project-number {
-    font-size: 13px;
-}
-
-.project-list-title {
-    font-family: "EB Garamond", serif;
-    font-size: clamp(24px, 3vw, 38px);
-    line-height: 1.05;
-}
-
-.project-list-meta {
-    font-size: 14px;
-    text-align: right;
-}
-
-
-/* =========================
-   PROJECT PAGES
-========================= */
-
-.project-page {
-    padding: 80px 40px 120px;
-}
-
-.project-hero {
-    max-width: 1100px;
-    margin-bottom: 140px;
-}
-
-.project-hero h1 {
-    margin: 0;
-    max-width: 950px;
-    font-size: clamp(44px, 7vw, 90px);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
-}
-
-.project-section {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    border-top: 1px solid #171717;
-    padding: 50px 0;
-}
-
-.project-section-text {
-    max-width: 750px;
-}
-
-.project-section-text p {
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-
-/* =========================
-   ABOUT PAGE
-========================= */
-
-.about-page {
-    padding: 80px 40px 120px;
-}
-
-.about-content {
-    width: 100%;
-    max-width: 1050px;
-    margin: 80px auto 0;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 110px;
-    align-items: center;
-}
-
-.about-text {
-    max-width: 520px;
-}
-
-.about-text h1 {
-    margin: 0 0 40px;
-    font-size: clamp(52px, 7vw, 90px);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
-}
-
-.about-text p {
-    font-size: 17px;
-    line-height: 1.55;
-    margin: 0 0 25px;
-    max-width: 500px;
-}
-
-.about-image {
-    width: 420px;
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    border-top: 1px solid #171717;
-    margin: 0 40px;
-    padding: 25px 0 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-left,
-.footer-right {
-    font-size: 13px;
-}
-
-.footer-right {
-    display: flex;
-    gap: 28px;
-}
-
-.footer-right a:hover {
-    opacity: 0.5;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    header {
-        padding: 22px 20px;
-    }
-
-    nav {
-        gap: 20px;
-    }
-
-    .home,
-    .projects-page,
-    .project-page,
-    .about-page {
-        padding: 60px 20px 80px;
-    }
-
-    .home-intro {
-        margin-bottom: 90px;
-    }
-
-    .home-intro h1 {
-        font-size: 52px;
-    }
-
-    .home-project {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .home-project-image {
-        max-width: 100%;
-    }
-
-    .home-project-image img {
-        max-height: 450px;
-    }
-
-    .home-project-info {
-        max-width: 100%;
-    }
-
-    .project-list-item {
-        grid-template-columns: 35px 1fr;
-        gap: 15px;
-    }
-
-    .project-list-meta {
-        grid-column: 2;
-        text-align: left;
-    }
-
-    .project-section {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        margin: 40px auto 0;
-    }
-
-    .about-text {
-        max-width: 600px;
-    }
-
-    .about-image {
-        width: 100%;
-        max-width: 420px;
-    }
-
-    footer {
-        margin: 0 20px;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .footer-right {
-        flex-direction: column;
-        gap: 8px;
-        text-align: right;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About — Chloe Tan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">CHLOE TAN</a>
+
+        <nav>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+
+    <main class="about-page">
+
+        <section class="about-content">
+
+            <div class="about-text">
+
+                <h1>About</h1>
+
+                <p>
+                    Chloe Tan is an architecture graduate based in Melbourne,
+                    Australia.
+                </p>
+
+                <p>
+                    Her work explores the relationship between architecture,
+                    landscape and inhabitation, with a particular interest in
+                    how buildings can respond to their surroundings and change
+                    over time.
+                </p>
+
+                <p>
+                    Her architectural interests extend across housing,
+                    adaptive reuse, landscape, materiality and user-centred
+                    design.
+                </p>
+
+            </div>
+
+
+            <div class="about-image">
+                <img
+                    src="IMG_1692.JPEG"
+                    alt="Chloe Tan"
+                >
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-left">
+            © 2026 Chloe Tan
+        </div>
+
+        <div class="footer-right">
+
+            <a
+                href="https://www.instagram.com/chloetan.arch/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+            <a href="mailto:chloejadetan08@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
