@@ -128,7 +128,116 @@ footer {
         grid-template-columns: 1fr;
         gap: 45px;
     }
+/* ABOUT PAGE */
 
+.about-page {
+    max-width: 1400px;
+}
+
+.about-intro {
+    margin-bottom: 140px;
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+}
+
+.about-intro h1 {
+    font-size: clamp(48px, 7vw, 110px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    max-width: 1000px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    max-width: 900px;
+    margin-bottom: 160px;
+}
+
+.about-column {
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.about-column p + p {
+    margin-top: 30px;
+}
+
+.about-details {
+    border-top: 1px solid #111;
+}
+
+.detail-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 28px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.detail-block h2 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.detail-row + .detail-row {
+    margin-top: 8px;
+}
+
+.cv-section {
+    margin-top: 100px;
+}
+
+.cv-link {
+    color: #111;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.cv-link:hover {
+    opacity: 0.5;
+}
+
+
+@media (max-width: 700px) {
+
+    .about-intro {
+        margin-bottom: 80px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 100px;
+    }
+
+    .about-column {
+        font-size: 16px;
+    }
+
+    .detail-block {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .detail-row {
+        font-size: 13px;
+    }
+
+}
     .intro {
         margin-bottom: 60px;
     }
