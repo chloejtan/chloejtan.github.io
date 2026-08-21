@@ -1,1812 +1,1403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Japan Studio — Yugeshima | Chloe Tan</title>
+  <title>Japan Studio — Chloe Tan</title>
 
-    <meta name="description" content="Japan Studio Research Proposal — Creative Residence on Yugeshima by Chloe Tan.">
+  <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+  <style>
+    /* =========================================================
+       JAPAN STUDIO
+       Page-specific styling
+       ========================================================= */
+
+    .project-page {
+      background: #f5f5f3;
+      color: #111;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px;
+      border-bottom: 1px solid #111;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .project-header a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .project-header a:hover {
+      opacity: 0.5;
+    }
+
+    .project-header-left {
+      display: flex;
+      gap: 35px;
+    }
+
+    .project-header-right {
+      display: flex;
+      gap: 35px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .project-hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px;
+      border-bottom: 1px solid #111;
+    }
+
+    .project-number {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .project-title {
+      font-size: clamp(70px, 13vw, 190px);
+      line-height: 0.82;
+      font-weight: 400;
+      letter-spacing: -0.07em;
+      margin: 0;
+    }
+
+    .project-location {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+
+    /* ---------- IMAGE PLACEHOLDER ---------- */
+
+    .image-placeholder {
+      width: 100%;
+      background: #dcdcd8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      overflow: hidden;
+    }
+
+    .image-placeholder span {
+      text-transform: uppercase;
+    }
+
+    .hero-image {
+      height: 75vh;
+      margin-bottom: 100px;
+    }
+
+    .wide-image {
+      height: 65vh;
+    }
+
+    .medium-image {
+      height: 50vh;
+    }
+
+    .small-image {
+      height: 35vh;
+    }
+
+
+    /* ---------- INTRO ---------- */
+
+    .project-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      padding: 120px 40px;
+      border-bottom: 1px solid #111;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .intro-text {
+      max-width: 850px;
+    }
+
+    .intro-text h2 {
+      font-size: clamp(32px, 4vw, 62px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin: 0 0 45px;
+    }
+
+    .intro-text p {
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 700px;
+      margin-bottom: 25px;
+    }
+
+
+    /* ---------- PROJECT INFO ---------- */
+
+    .project-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #111;
+    }
+
+    .info-item {
+      padding: 35px 40px;
+      border-right: 1px solid #111;
+    }
+
+    .info-item:last-child {
+      border-right: none;
+    }
+
+    .info-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 15px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+
+    /* ---------- SECTION ---------- */
+
+    .project-section {
+      padding: 120px 40px;
+      border-bottom: 1px solid #111;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      margin-bottom: 80px;
+    }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 6vw, 90px);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      margin: 0;
+    }
+
+    .section-description {
+      margin-top: 35px;
+      max-width: 650px;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+
+    /* ---------- TWO COLUMN ---------- */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .two-column .image-placeholder {
+      height: 60vh;
+    }
+
+
+    /* ---------- THREE COLUMN ---------- */
+
+    .three-column {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .three-column .image-placeholder {
+      height: 45vh;
+    }
+
+
+    /* ---------- FULL BLEED ---------- */
+
+    .full-image {
+      width: 100%;
+      margin-top: 80px;
+    }
+
+
+    /* ---------- TEXT + IMAGE ---------- */
+
+    .image-text-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .image-text-grid.reverse {
+      grid-template-columns: 1fr 1.4fr;
+    }
+
+    .image-text-grid .image-placeholder {
+      height: 65vh;
+    }
+
+    .text-block {
+      max-width: 550px;
+    }
+
+    .text-block h3 {
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      margin: 0 0 25px;
+    }
+
+    .text-block p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+
+    /* ---------- QUOTE ---------- */
+
+    .project-quote {
+      padding: 160px 40px;
+      border-bottom: 1px solid #111;
+    }
+
+    .project-quote p {
+      font-size: clamp(38px, 5vw, 75px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 1100px;
+      margin: 0;
+    }
+
+
+    /* ---------- PROCESS GRID ---------- */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .process-grid .image-placeholder {
+      height: 55vh;
+    }
+
+    .process-caption {
+      margin-top: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+
+    /* ---------- FINAL PROJECT ---------- */
+
+    .final-project {
+      padding: 120px 40px;
+      border-bottom: 1px solid #111;
+    }
+
+    .final-title {
+      font-size: clamp(55px, 10vw, 150px);
+      line-height: 0.82;
+      letter-spacing: -0.07em;
+      font-weight: 400;
+      margin: 0 0 100px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .project-footer {
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .project-footer a {
+      color: #111;
+      text-decoration: none;
+    }
+
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 800px) {
+
+      .project-header,
+      .project-hero,
+      .project-section,
+      .project-intro,
+      .project-quote,
+      .final-project {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .project-header-left,
+      .project-header-right {
+        gap: 15px;
+      }
+
+      .project-hero {
+        min-height: 75vh;
+      }
+
+      .project-title {
+        font-size: 19vw;
+      }
+
+      .project-intro,
+      .section-header,
+      .image-text-grid,
+      .image-text-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .project-info {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .info-item {
+        border-bottom: 1px solid #111;
+      }
+
+      .info-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .two-column,
+      .three-column,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        height: 55vh;
+      }
+
+      .wide-image,
+      .medium-image,
+      .two-column .image-placeholder,
+      .three-column .image-placeholder,
+      .process-grid .image-placeholder,
+      .image-text-grid .image-placeholder {
+        height: 45vh;
+      }
+
+      .project-footer {
+        padding: 25px 20px;
+      }
+    }
+  </style>
 </head>
 
-<body>
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================== -->
+<body class="project-page">
 
-    <header class="site-header">
-        <a href="index.html" class="site-logo">CHLOE TAN</a>
 
-        <nav class="main-nav">
-            <a href="index.html">WORK</a>
-            <a href="about.html">ABOUT</a>
-            <a href="contact.html">CONTACT</a>
-        </nav>
-    </header>
+  <!-- ========================================================
+       HEADER
+       ======================================================== -->
 
+  <header class="project-header">
 
-    <!-- =========================================================
-         PROJECT HERO
-    ========================================================== -->
+    <div class="project-header-left">
+      <a href="index.html">CHLOE TAN</a>
+      <a href="index.html">WORK</a>
+    </div>
 
-    <main>
+    <div class="project-header-right">
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
 
-        <section class="project-hero">
+  </header>
 
-            <div class="project-hero-image image-placeholder">
-                <span>FIG. 01 — HERO IMAGE</span>
-            </div>
 
-            <div class="project-hero-info">
 
-                <p class="project-number">03</p>
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
 
-                <h1>JAPAN STUDIO</h1>
+  <section class="project-hero">
 
-                <p class="project-subtitle">
-                    Creative Residence — Yugeshima, Japan
-                </p>
+    <div class="project-number">
+      02 / JAPAN STUDIO
+    </div>
 
-                <div class="project-meta">
+    <h1 class="project-title">
+      YUGESHIMA
+    </h1>
 
-                    <div>
-                        <span>TYPE</span>
-                        <p>Research Proposal / Adaptive Reuse</p>
-                    </div>
+    <div class="project-location">
+      <div>
+        CREATIVE RESIDENCE<br>
+        NAGI'S HOUSE
+      </div>
 
-                    <div>
-                        <span>LOCATION</span>
-                        <p>Yugeshima, Kamijima, Ehime, Japan</p>
-                    </div>
+      <div>
+        KAMIJIMA, EHIME<br>
+        JAPAN — 2025
+      </div>
+    </div>
 
-                    <div>
-                        <span>YEAR</span>
-                        <p>2025</p>
-                    </div>
+  </section>
 
-                    <div>
-                        <span>ROLE</span>
-                        <p>Individual Academic Project</p>
-                    </div>
 
-                </div>
 
-            </div>
+  <!-- HERO IMAGE -->
 
-        </section>
+  <div class="image-placeholder hero-image">
+    <span>Hero Image — Nagi's House / Yugeshima</span>
+  </div>
 
 
-        <!-- =====================================================
-             PROJECT INTRODUCTION
-        ====================================================== -->
 
-        <section class="project-introduction">
+  <!-- ========================================================
+       INTRO
+       ======================================================== -->
 
-            <div class="section-label">
-                <span>01</span>
-                <span>PROJECT</span>
-            </div>
+  <section class="project-intro">
 
-            <div class="introduction-content">
+    <div class="section-label">
+      Project
+    </div>
 
-                <h2>
-                    Architecture as a living archive.
-                </h2>
+    <div class="intro-text">
 
-                <p class="large-text">
-                    The Japan Studio research proposal explores the adaptive
-                    reuse of an akiya on Yugeshima, responding to depopulation
-                    and the post-growth condition of rural Japan.
-                </p>
+      <h2>
+        Architecture as a living archive.
+      </h2>
 
-                <p>
-                    The project investigates how an existing building can be
-                    structurally reinforced and adapted while retaining the
-                    history and memories embedded within its materials.
-                    Rather than treating the vacant house as an object to be
-                    restored to a fixed historical condition, the proposal
-                    considers the building as a living archive — continuously
-                    shaped by the people who inhabit, modify and interact with it.
-                </p>
+      <p>
+        Akiya are vacant homes scattered throughout Japan as a consequence
+        of depopulation and the changing conditions of rural communities.
+        This project asks how an existing house can be revitalised without
+        erasing the history embedded within it.
+      </p>
 
-                <p>
-                    The resulting creative residence provides a framework for
-                    artists, makers and designers to inhabit, work and exchange
-                    ideas within the existing structure.
-                </p>
+      <p>
+        Located on Yugeshima in Kamijima, Ehime, the project transforms an
+        existing akiya, Nagi's House, into a creative residence for artists,
+        makers and designers.
+      </p>
 
-            </div>
+      <p>
+        Rather than treating preservation as an attempt to freeze the building
+        in time, the proposal considers the house as a living archive — a
+        framework that can continue to change through inhabitation.
+      </p>
 
-        </section>
+    </div>
 
+  </section>
 
-        <!-- =====================================================
-             HYPOTHESIS
-        ====================================================== -->
 
-        <section class="project-section dark-section">
 
-            <div class="section-label">
-                <span>02</span>
-                <span>RESEARCH HYPOTHESIS</span>
-            </div>
+  <!-- ========================================================
+       PROJECT INFORMATION
+       ======================================================== -->
 
-            <div class="statement">
+  <section class="project-info">
 
-                <p class="statement-label">
-                    RESEARCH HYPOTHESIS
-                </p>
+    <div class="info-item">
+      <div class="info-label">Location</div>
+      <div class="info-value">
+        Yugeshima<br>
+        Kamijima, Ehime, Japan
+      </div>
+    </div>
 
-                <h2>
-                    A building and its materials hold and reflect the
-                    interactions that the space has had with people and its
-                    surroundings, telling a story of memory, programme and use.
-                </h2>
+    <div class="info-item">
+      <div class="info-label">Project</div>
+      <div class="info-value">
+        Creative Residence<br>
+        Adaptive Reuse
+      </div>
+    </div>
 
-                <p>
-                    The habits and routines of people have the ability to leave
-                    marks on a space — constantly evolving and being developed
-                    upon as users come and go.
-                </p>
+    <div class="info-item">
+      <div class="info-label">Year</div>
+      <div class="info-value">
+        2025
+      </div>
+    </div>
 
-            </div>
+    <div class="info-item">
+      <div class="info-label">Scale</div>
+      <div class="info-value">
+        Existing 2-storey timber house<br>
+        145 sqm
+      </div>
+    </div>
 
-        </section>
+  </section>
 
 
-        <!-- =====================================================
-             RESEARCH QUESTION
-        ====================================================== -->
 
-        <section class="project-section">
+  <!-- ========================================================
+       RESEARCH / CONTEXT
+       ======================================================== -->
 
-            <div class="section-label">
-                <span>03</span>
-                <span>RESEARCH QUESTION</span>
-            </div>
+  <section class="project-section">
 
-            <div class="question-block">
+    <div class="section-header">
 
-                <p class="question-number">01</p>
+      <div class="section-number">
+        01 / CONTEXT
+      </div>
 
-                <h2>
-                    How can a building be structurally reinforced to extend
-                    its lifespan whilst retaining the history and memories
-                    tied to it, creating a framework for the revitalisation
-                    of rural communities around Japan?
-                </h2>
+      <div>
 
-            </div>
+        <h2 class="section-title">
+          Rural Japan<br>
+          in transition.
+        </h2>
 
-            <div class="secondary-questions">
+        <p class="section-description">
+          Kamijima is a seaside town in Ehime experiencing depopulation,
+          an ageing population and the decline of traditional industries.
+          As younger generations migrate towards major cities, vacant
+          houses and underutilised spaces are becoming increasingly common.
+        </p>
 
-                <div class="question">
-                    <span>0.1</span>
-                    <p>
-                        How can a building's history be reflected through the
-                        way occupants use the space?
-                    </p>
-                </div>
+      </div>
 
-                <div class="question">
-                    <span>0.2</span>
-                    <p>
-                        How can the original structure of a building be
-                        preserved whilst considering durability and
-                        reinforcement?
-                    </p>
-                </div>
+    </div>
 
-                <div class="question">
-                    <span>0.3</span>
-                    <p>
-                        How can a building be adapted to suit different
-                        creative residents through the treatment and
-                        flexibility of materials?
-                    </p>
-                </div>
 
-            </div>
+    <div class="two-column">
 
-        </section>
+      <div class="image-placeholder">
+        <span>Kamijima Context</span>
+      </div>
 
+      <div class="image-placeholder">
+        <span>Yugeshima / Seto Inland Sea</span>
+      </div>
 
-        <!-- =====================================================
-             RESEARCH — POST GROWTH
-        ====================================================== -->
+    </div>
 
-        <section class="project-section">
+  </section>
 
-            <div class="section-label">
-                <span>04</span>
-                <span>RESEARCH</span>
-            </div>
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 01</p>
-                <h2>Post Growth & Depopulation</h2>
-                <p class="japanese">人口減少とポスト成長</p>
-            </div>
 
-            <div class="image-grid two-column">
+  <!-- ========================================================
+       AKIYA
+       ======================================================== -->
 
-                <div class="image-placeholder">
-                    <span>FIG. 02 — KAMIJIMA AGE / GENDER DATA</span>
-                </div>
+  <section class="project-section">
 
-                <div class="image-placeholder">
-                    <span>FIG. 03 — KAMIJIMA TOWN</span>
-                </div>
+    <div class="section-header">
 
-            </div>
+      <div class="section-number">
+        02 / AKIYA
+      </div>
 
-            <div class="text-image-layout">
+      <div>
 
-                <div class="text-content">
+        <h2 class="section-title">
+          The vacant<br>
+          house.
+        </h2>
 
-                    <p>
-                        Located in the Ehime region of Japan, the seaside town
-                        of Kamijima is facing depopulation and the effects of
-                        a post-growth society.
-                    </p>
+        <p class="section-description">
+          Nagi's House is an existing two-storey timber building located
+          within a residential area of Yugeshima. Once functioning as a
+          store, the building contains traces of its former occupation
+          within its material and spatial conditions.
+        </p>
 
-                    <p>
-                        Younger generations commonly migrate towards major
-                        cities on the mainland in search of tertiary education
-                        and employment. This leaves many rural communities
-                        with ageing populations, vacant homes and
-                        underutilised spaces.
-                    </p>
+      </div>
 
-                    <p>
-                        Rather than viewing these conditions as the end of a
-                        community, the project reframes population decline as
-                        an opportunity for renewal.
-                    </p>
+    </div>
 
-                </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 04 — SHIMANAMI KAIDO</span>
-                </div>
+    <div class="full-image">
 
-            </div>
+      <div class="image-placeholder wide-image">
+        <span>Nagi's House — Existing Exterior</span>
+      </div>
 
-        </section>
+    </div>
 
 
-        <!-- =====================================================
-             AKIYA
-        ====================================================== -->
+    <div class="three-column" style="margin-top: 25px;">
 
-        <section class="project-section">
+      <div class="image-placeholder">
+        <span>Existing Condition 01</span>
+      </div>
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 02</p>
-                <h2>Akiya</h2>
-                <p class="japanese">空き家</p>
-            </div>
+      <div class="image-placeholder">
+        <span>Existing Condition 02</span>
+      </div>
 
-            <div class="feature-image image-placeholder">
-                <span>FIG. 05 — VACANT HOUSE ON YUGESHIMA</span>
-            </div>
+      <div class="image-placeholder">
+        <span>Existing Condition 03</span>
+      </div>
 
-            <div class="text-content narrow">
+    </div>
 
-                <p>
-                    Akiya (空き家) are vacant homes that have become widespread
-                    throughout rural Japan as a result of depopulation and
-                    changing economic conditions.
-                </p>
+  </section>
 
-                <p>
-                    These buildings represent more than vacant structures.
-                    They contain traces of previous inhabitation, material
-                    histories and cultural memory.
-                </p>
 
-                <p>
-                    The project therefore approaches the akiya not as a
-                    building to erase and replace, but as an existing archive
-                    that can support new forms of inhabitation.
-                </p>
 
-            </div>
+  <!-- ========================================================
+       CONCEPT
+       ======================================================== -->
 
-        </section>
+  <section class="project-quote">
 
+    <p>
+      How can a building be structurally reinforced to extend its lifespan
+      whilst retaining the history and memories tied to it?
+    </p>
 
-        <!-- =====================================================
-             SHIPBUILDING
-        ====================================================== -->
+  </section>
 
-        <section class="project-section">
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 03</p>
-                <h2>The Shipbuilding Industry</h2>
-                <p class="japanese">造船業</p>
-            </div>
 
-            <div class="image-grid two-column">
+  <!-- ========================================================
+       MATERIAL HISTORY
+       ======================================================== -->
 
-                <div class="image-placeholder">
-                    <span>FIG. 06 — HABU PORT</span>
-                </div>
+  <section class="project-section">
 
-                <div class="image-placeholder">
-                    <span>FIG. 07 — SHIPBUILDING / FERRY</span>
-                </div>
+    <div class="section-header">
 
-            </div>
+      <div class="section-number">
+        03 / MATERIAL HISTORY
+      </div>
 
-            <div class="text-content narrow">
+      <div>
 
-                <p>
-                    Kamijima has a long-standing history of shipbuilding,
-                    shaped by its proximity to the Seto Inland Sea and its
-                    sheltered waters.
-                </p>
+        <h2 class="section-title">
+          Materials<br>
+          remember.
+        </h2>
 
-                <p>
-                    The proposal investigates the possibility of sourcing
-                    unused steel scaffolding from shipbuilding sites around
-                    Kamijima and reusing it as a flexible intervention within
-                    the creative residence.
-                </p>
+        <p class="section-description">
+          Materials change through occupation. Timber becomes polished,
+          darkened and marked through repeated touch, while steel records
+          environmental exposure through oxidation, weathering and corrosion.
+          These transformations allow material itself to become a record of time.
+        </p>
 
-                <p>
-                    The material therefore carries a connection to the
-                    industrial history of the island while providing a new
-                    function within the architecture.
-                </p>
+      </div>
 
-            </div>
+    </div>
 
-        </section>
 
+    <div class="image-text-grid">
 
-        <!-- =====================================================
-             JAPANESE CONSTRUCTION
-        ====================================================== -->
+      <div class="image-placeholder">
+        <span>Weathered Timber</span>
+      </div>
 
-        <section class="project-section">
+      <div class="text-block">
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 04</p>
-                <h2>Japanese Construction Techniques</h2>
-                <p class="japanese">日本の建築技術</p>
-            </div>
+        <h3>
+          Timber
+        </h3>
 
-            <div class="image-grid three-column">
+        <p>
+          Existing timber is retained wherever possible. Scratches, dents,
+          discolouration and wear are not treated simply as defects, but as
+          evidence of occupation.
+        </p>
 
-                <div class="image-placeholder">
-                    <span>SASHIMONO</span>
-                </div>
+        <p>
+          The existing structure therefore becomes part of the architectural
+          language of the proposal, allowing the history of the house to
+          remain visible.
+        </p>
 
-                <div class="image-placeholder">
-                    <span>SHOJI / FUSUMA</span>
-                </div>
+      </div>
 
-                <div class="image-placeholder">
-                    <span>ENGAWA / TATAMI</span>
-                </div>
+    </div>
 
-            </div>
 
-            <div class="text-content narrow">
+    <div class="image-text-grid reverse" style="margin-top: 100px;">
 
-                <p>
-                    Traditional Japanese construction methods embody
-                    principles of craftsmanship, adaptability and respect for
-                    natural materials.
-                </p>
+      <div class="text-block">
 
-                <p>
-                    Sashimono (指物) allows timber elements to be assembled,
-                    disassembled and modified over time. Shoji (障子) and
-                    fusuma (襖) allow spaces to be divided, joined and
-                    reconfigured.
-                </p>
+        <h3>
+          Steel
+        </h3>
 
-                <p>
-                    The concept of tatami (畳) and the measurement of rooms
-                    through the number of mats they accommodate informs the
-                    proposal's approach to programme. Rather than fixing each
-                    room to a single function, the building elements themselves
-                    define the potential uses of the space.
-                </p>
+        <p>
+          New steel provides a contrasting layer of intervention. Unlike the
+          timber, which records human touch, steel records environmental
+          conditions and provides a durable structural framework.
+        </p>
 
-            </div>
+        <p>
+          The distinction between old and new is deliberately legible,
+          allowing the intervention to communicate the ongoing transformation
+          of the building.
+        </p>
 
-        </section>
+      </div>
 
+      <div class="image-placeholder">
+        <span>Steel Reinforcement</span>
+      </div>
 
-        <!-- =====================================================
-             MATERIAL HISTORY
-        ====================================================== -->
+    </div>
 
-        <section class="project-section">
+  </section>
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 05</p>
-                <h2>Material History</h2>
-                <p class="japanese">材料の記憶</p>
-            </div>
 
-            <div class="feature-image image-placeholder">
-                <span>FIG. 08 — WEATHERED MATERIALS</span>
-            </div>
 
-            <div class="text-content narrow">
+  <!-- ========================================================
+       PRESERVATION
+       ======================================================== -->
 
-                <p>
-                    Materials hold memory through the physical changes they
-                    exhibit. Rust, patina, stains, cracks and wear reveal the
-                    passage of time and the presence of people.
-                </p>
+  <section class="project-section">
 
-                <p>
-                    Timber darkens, warps and wears through repeated contact.
-                    Door handles, balustrades, stairs, tatami and sliding door
-                    tracks can become high-touch zones where human movement is
-                    recorded directly into the material.
-                </p>
+    <div class="section-header">
 
-                <p>
-                    These traces transform the building into a living archive,
-                    where material change becomes an expression of inhabitation.
-                </p>
+      <div class="section-number">
+        04 / PRESERVATION
+      </div>
 
-            </div>
+      <div>
 
-            <div class="image-grid three-column">
+        <h2 class="section-title">
+          Reinforce<br>
+          rather than replace.
+        </h2>
 
-                <div class="image-placeholder">
-                    <span>FIG. 09 — TIMBER</span>
-                </div>
+        <p class="section-description">
+          The existing timber structure is retained and reinforced where
+          required. Steel sections are introduced around aged structural
+          elements to increase their capacity while leaving the original
+          material visible.
+        </p>
 
-                <div class="image-placeholder">
-                    <span>FIG. 10 — HIGH TOUCH ZONE</span>
-                </div>
+      </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 11 — AGED MATERIAL</span>
-                </div>
+    </div>
 
-            </div>
 
-        </section>
+    <div class="two-column">
 
+      <div class="image-placeholder">
+        <span>Timber + Steel Detail</span>
+      </div>
 
-        <!-- =====================================================
-             PRESERVATION
-        ====================================================== -->
+      <div class="image-placeholder">
+        <span>Steel Reinforcement Strategy</span>
+      </div>
 
-        <section class="project-section dark-section">
+    </div>
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 06</p>
-                <h2>Preservation & Reinforcement</h2>
-                <p class="japanese">保存と補強</p>
-            </div>
 
-            <div class="material-comparison">
+    <div class="full-image">
 
-                <div>
-                    <p class="material-label">OLD</p>
-                    <h3>TIMBER</h3>
-                    <p>
-                        Human use, moisture, decay and environmental exposure
-                        leave physical traces within the existing structure.
-                    </p>
-                </div>
+      <div class="image-placeholder wide-image">
+        <span>Structural Intervention Drawing</span>
+      </div>
 
-                <div>
-                    <p class="material-label">NEW</p>
-                    <h3>STEEL</h3>
-                    <p>
-                        Steel provides structural strength, durability and a
-                        clear distinction between the existing and new.
-                    </p>
-                </div>
+    </div>
 
-            </div>
+  </section>
 
-            <div class="feature-image image-placeholder">
-                <span>FIG. 12 — STEEL / TIMBER JUNCTION</span>
-            </div>
 
-            <div class="text-content narrow">
 
-                <p>
-                    The proposal uses the contrasting ageing properties of
-                    timber and steel to express both memory and renewal.
-                </p>
+  <!-- ========================================================
+       ADAPTABILITY
+       ======================================================== -->
 
-                <p>
-                    Worn timber records the history of the akiya, while new
-                    steel provides reinforcement and a new structural language.
-                    Rather than hiding the intervention, the new material is
-                    deliberately expressed.
-                </p>
+  <section class="project-section">
 
-            </div>
+    <div class="section-header">
 
-        </section>
+      <div class="section-number">
+        05 / SPATIAL ADAPTABILITY
+      </div>
 
+      <div>
 
-        <!-- =====================================================
-             STEEL INTERVENTION
-        ====================================================== -->
+        <h2 class="section-title">
+          A house that<br>
+          can change.
+        </h2>
 
-        <section class="project-section">
+        <p class="section-description">
+          The creative residence is designed to accommodate different
+          residents and creative disciplines. Rather than assigning a
+          permanent function to every space, adaptable elements allow
+          occupants to modify the building according to their needs.
+        </p>
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 07</p>
-                <h2>Steel Reinforcement</h2>
-            </div>
+      </div>
 
-            <div class="image-grid two-column">
+    </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 13 — STEEL CAPPING DETAIL</span>
-                </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 14 — TIMBER / STEEL REINFORCEMENT</span>
-                </div>
+    <div class="image-text-grid">
 
-            </div>
+      <div class="image-placeholder">
+        <span>Shoji + Fusuma Adaptability</span>
+      </div>
 
-            <div class="text-content narrow">
+      <div class="text-block">
 
-                <p>
-                    A range of steel sections can be used to reinforce aged
-                    timber columns and beams while retaining the original
-                    structural elements.
-                </p>
+        <h3>
+          Flexible thresholds
+        </h3>
 
-                <p>
-                    Equal angles, PFCs and universal sections can be introduced
-                    as new structural components, allowing the timber to remain
-                    visible and legible as part of the building's history.
-                </p>
+        <p>
+          Traditional Japanese elements such as shoji and fusuma provide
+          a precedent for spaces that can open, close, divide and combine.
+        </p>
 
-            </div>
+        <p>
+          This principle is translated into the creative residence, where
+          spaces can shift between individual work, collaborative activity,
+          exhibition and community use.
+        </p>
 
-        </section>
+      </div>
 
+    </div>
 
-        <!-- =====================================================
-             SHIP OF THESEUS
-        ====================================================== -->
 
-        <section class="project-section">
+    <div class="full-image">
 
-            <div class="section-heading">
-                <p class="eyebrow">RESEARCH 08</p>
-                <h2>Ship of Theseus</h2>
-                <p class="japanese">テセウスの船</p>
-            </div>
+      <div class="image-placeholder wide-image">
+        <span>Flexible Studio Configuration</span>
+      </div>
 
-            <div class="split-feature">
+    </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 15 — SHIP OF THESEUS DIAGRAM</span>
-                </div>
+  </section>
 
-                <div class="text-content">
 
-                    <p>
-                        The Ship of Theseus paradox questions whether an object
-                        remains the same when all of its parts are gradually
-                        replaced.
-                    </p>
 
-                    <p>
-                        This provides a conceptual framework for the renovation
-                        of the akiya. Traditional Japanese buildings have
-                        historically allowed individual components to be
-                        repaired, replaced and renewed while retaining the
-                        identity of the building.
-                    </p>
+  <!-- ========================================================
+       CREATIVE RESIDENCE
+       ======================================================== -->
 
-                    <p>
-                        The project asks whether preservation can therefore
-                        occur through change rather than resisting it.
-                    </p>
+  <section class="project-section">
 
-                </div>
+    <div class="section-header">
 
-            </div>
+      <div class="section-number">
+        06 / CREATIVE RESIDENCE
+      </div>
 
-        </section>
+      <div>
 
+        <h2 class="section-title">
+          Space for<br>
+          exchange.
+        </h2>
 
-        <!-- =====================================================
-             RESEARCH PROPOSAL
-        ====================================================== -->
+        <p class="section-description">
+          The residence provides a shared creative environment for artists,
+          designers and makers. The programme deliberately avoids fixing
+          every space to a single discipline, allowing the residents to
+          shape their environment.
+        </p>
 
-        <section class="project-section proposal-section">
+      </div>
 
-            <div class="section-label">
-                <span>05</span>
-                <span>RESEARCH PROPOSAL</span>
-            </div>
+    </div>
 
-            <div class="proposal-title">
 
-                <p class="eyebrow">THE PROPOSAL</p>
+    <div class="three-column">
 
-                <h2>
-                    A creative residence for Yugeshima.
-                </h2>
+      <div class="image-placeholder">
+        <span>Painter</span>
+      </div>
 
-                <p>
-                    A framework for memory, reinforcement, adaptation and
-                    creative exchange.
-                </p>
+      <div class="image-placeholder">
+        <span>Carpenter</span>
+      </div>
 
-            </div>
+      <div class="image-placeholder">
+        <span>Potter</span>
+      </div>
 
-        </section>
+    </div>
 
 
-        <!-- =====================================================
-             SPATIAL ADAPTABILITY
-        ====================================================== -->
+    <div class="three-column" style="margin-top: 20px;">
 
-        <section class="project-section">
+      <div class="image-placeholder">
+        <span>Fashion Designer</span>
+      </div>
 
-            <div class="section-heading">
-                <p class="eyebrow">01</p>
-                <h2>Spatial Adaptability</h2>
-                <p class="japanese">空間の適応性</p>
-            </div>
+      <div class="image-placeholder">
+        <span>Filmmaker</span>
+      </div>
 
-            <div class="text-image-layout">
+      <div class="image-placeholder">
+        <span>Sculptor</span>
+      </div>
 
-                <div class="text-content">
+    </div>
 
-                    <p>
-                        The creative residence is designed to support a range
-                        of creative residents including painters, sculptors,
-                        furniture designers, filmmakers, seamstresses and
-                        students.
-                    </p>
+  </section>
 
-                    <p>
-                        Rather than assigning each room a fixed programme,
-                        adaptable architectural elements allow the spaces to
-                        change according to the needs of their occupants.
-                    </p>
 
-                </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 16 — CREATIVE RESIDENTS</span>
-                </div>
+  <!-- ========================================================
+       SCAFFOLDING
+       ======================================================== -->
 
-            </div>
+  <section class="project-section">
 
-        </section>
+    <div class="section-header">
 
+      <div class="section-number">
+        07 / SCAFFOLDING
+      </div>
 
-        <!-- =====================================================
-             SHOJI / FUSUMA
-        ====================================================== -->
+      <div>
 
-        <section class="project-section">
+        <h2 class="section-title">
+          Architecture<br>
+          as a kit.
+        </h2>
 
-            <div class="section-heading">
-                <p class="eyebrow">02</p>
-                <h2>Timber Adaptability</h2>
-            </div>
+        <p class="section-description">
+          Unused steel scaffolding sourced from shipbuilding sites around
+          Kamijima becomes a temporary construction system within the
+          courtyard. Residents can assemble, modify and dismantle elements
+          according to their needs.
+        </p>
 
-            <div class="feature-image image-placeholder">
-                <span>FIG. 17 — SHOJI / FUSUMA ADAPTABILITY</span>
-            </div>
+      </div>
 
-            <div class="text-content narrow">
+    </div>
 
-                <p>
-                    The layering of fusuma and shoji enables the interior to
-                    shift between open and enclosed conditions.
-                </p>
 
-                <p>
-                    Sliding or removing panels allows spaces to expand for
-                    collaboration or contract for individual work. The system
-                    responds to varying requirements for light, privacy,
-                    activity and season.
-                </p>
+    <div class="image-text-grid">
 
-            </div>
+      <div class="image-placeholder">
+        <span>Scaffolding Intervention</span>
+      </div>
 
-        </section>
+      <div class="text-block">
 
+        <h3>
+          Temporary / permanent
+        </h3>
 
-        <!-- =====================================================
-             CREATIVE RESIDENTS
-        ====================================================== -->
+        <p>
+          The scaffolding introduces a layer of impermanence into the
+          architecture. It can become storage, shelter, display space,
+          outdoor working space or a structure for hanging materials.
+        </p>
 
-        <section class="project-section">
+        <p>
+          The system allows the residents themselves to participate in the
+          continual construction of the building.
+        </p>
 
-            <div class="section-heading">
-                <p class="eyebrow">03</p>
-                <h2>Creative Residents</h2>
-            </div>
+      </div>
 
-            <div class="resident-grid">
+    </div>
 
-                <div class="resident">
-                    <span>01</span>
-                    <h3>Potter</h3>
-                    <p>Pottery / Kiln / Storage / Gallery</p>
-                </div>
 
-                <div class="resident">
-                    <span>02</span>
-                    <h3>Painter</h3>
-                    <p>Painting / Desk / Gallery</p>
-                </div>
+    <div class="full-image">
 
-                <div class="resident">
-                    <span>03</span>
-                    <h3>Carpenter</h3>
-                    <p>Workbench / Timber Storage / Gallery</p>
-                </div>
+      <div class="image-placeholder wide-image">
+        <span>Scaffolding Connection Detail</span>
+      </div>
 
-                <div class="resident">
-                    <span>04</span>
-                    <h3>Filmmaker</h3>
-                    <p>Filming / Editing / Screening</p>
-                </div>
+    </div>
 
-                <div class="resident">
-                    <span>05</span>
-                    <h3>Seamstress</h3>
-                    <p>Fabric / Sewing / Display</p>
-                </div>
+  </section>
 
-                <div class="resident">
-                    <span>06</span>
-                    <h3>Student</h3>
-                    <p>Desk / Study / Collaborative Space</p>
-                </div>
 
-            </div>
 
-        </section>
+  <!-- ========================================================
+       PROGRAMME
+       ======================================================== -->
 
+  <section class="project-section">
 
-        <!-- =====================================================
-             SCAFFOLDING
-        ====================================================== -->
+    <div class="section-header">
 
-        <section class="project-section dark-section">
+      <div class="section-number">
+        08 / PROGRAMME
+      </div>
 
-            <div class="section-heading">
-                <p class="eyebrow">04</p>
-                <h2>Temporary Scaffolding</h2>
-                <p class="japanese">一時的な足場</p>
-            </div>
+      <div>
 
-            <div class="feature-image image-placeholder">
-                <span>FIG. 18 — SCAFFOLDING INTERVENTION</span>
-            </div>
+        <h2 class="section-title">
+          A creative<br>
+          social hub.
+        </h2>
 
-            <div class="text-content narrow">
+        <p class="section-description">
+          The ground floor opens towards the street and provides a gallery,
+          café and flexible studio. The upper level accommodates short-term
+          residents alongside shared domestic spaces.
+        </p>
 
-                <p>
-                    The courtyard becomes a space for temporary construction.
-                    Reused steel scaffolding allows residents to customise
-                    their working environment according to their craft.
-                </p>
+      </div>
 
-                <p>
-                    A painter may create a sheltered spray-painting area.
-                    A seamstress may use the structure to hang fabric.
-                    A carpenter may create additional storage. A short-term
-                    resident may simply use it to hang laundry.
-                </p>
+    </div>
 
-                <p>
-                    The intervention is deliberately temporary, allowing the
-                    courtyard to continually change as different people occupy
-                    the residence.
-                </p>
 
-            </div>
+    <div class="full-image">
 
-        </section>
+      <div class="image-placeholder wide-image">
+        <span>Ground Floor Plan</span>
+      </div>
 
+    </div>
 
-        <!-- =====================================================
-             SCAFFOLDING CONNECTION
-        ====================================================== -->
 
-        <section class="project-section">
+    <div class="full-image">
 
-            <div class="section-heading">
-                <p class="eyebrow">05</p>
-                <h2>Connection Details</h2>
-            </div>
+      <div class="image-placeholder wide-image">
+        <span>Upper Floor Plan</span>
+      </div>
 
-            <div class="image-grid two-column">
+    </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 19 — EXISTING CONNECTION</span>
-                </div>
+  </section>
 
-                <div class="image-placeholder">
-                    <span>FIG. 20 — PROPOSED CONNECTION</span>
-                </div>
 
-            </div>
 
-            <div class="text-content narrow">
+  <!-- ========================================================
+       PRECEDENTS
+       ======================================================== -->
 
-                <p>
-                    The proposal develops a simplified scaffolding connection
-                    system to provide creative residents with an efficient
-                    method of assembling temporary structures.
-                </p>
+  <section class="project-section">
 
-            </div>
+    <div class="section-header">
 
-        </section>
+      <div class="section-number">
+        09 / PRECEDENTS
+      </div>
 
+      <div>
 
-        <!-- =====================================================
-             PROGRAMME
-        ====================================================== -->
+        <h2 class="section-title">
+          Learning from<br>
+          existing transformations.
+        </h2>
 
-        <section class="project-section">
+        <p class="section-description">
+          The proposal draws from projects that approach adaptive reuse,
+          material memory and community-led transformation as an ongoing
+          architectural process.
+        </p>
 
-            <div class="section-heading">
-                <p class="eyebrow">06</p>
-                <h2>The Programme</h2>
-                <p class="japanese">プログラム</p>
-            </div>
+      </div>
 
-            <div class="feature-image image-placeholder">
-                <span>FIG. 21 — FLOOR PLAN</span>
-            </div>
+    </div>
 
-            <div class="programme-grid">
 
-                <div>
-                    <span>GROUND FLOOR</span>
-                    <h3>Gallery</h3>
-                    <p>Street-facing exhibition and community space.</p>
-                </div>
+    <div class="three-column">
 
-                <div>
-                    <span>GROUND FLOOR</span>
-                    <h3>Cafe</h3>
-                    <p>Community-facing cafe and servery.</p>
-                </div>
+      <div>
 
-                <div>
-                    <span>GROUND FLOOR</span>
-                    <h3>Studio</h3>
-                    <p>Flexible creative workspace.</p>
-                </div>
+        <div class="image-placeholder">
+          <span>Chidori Bunka</span>
+        </div>
 
-                <div>
-                    <span>GROUND FLOOR</span>
-                    <h3>Garden</h3>
-                    <p>Adaptable outdoor creative space.</p>
-                </div>
+        <div class="process-caption">
+          Chidori Bunka / dot architects
+        </div>
 
-                <div>
-                    <span>SECOND FLOOR</span>
-                    <h3>Lease 01</h3>
-                    <p>Short-term creative residence.</p>
-                </div>
+      </div>
 
-                <div>
-                    <span>SECOND FLOOR</span>
-                    <h3>Lease 02</h3>
-                    <p>Short-term creative residence.</p>
-                </div>
+      <div>
 
-                <div>
-                    <span>SECOND FLOOR</span>
-                    <h3>Kitchen</h3>
-                    <p>Communal kitchen and gathering space.</p>
-                </div>
+        <div class="image-placeholder">
+          <span>Hanaju Renovation</span>
+        </div>
 
-            </div>
+        <div class="process-caption">
+          Hanaju Renovation / MARU.architecture
+        </div>
 
-        </section>
+      </div>
 
+      <div>
 
-        <!-- =====================================================
-             PRECEDENTS
-        ====================================================== -->
+        <div class="image-placeholder">
+          <span>PC Caritas</span>
+        </div>
 
-        <section class="project-section">
+        <div class="process-caption">
+          PC Caritas / ADJVIV
+        </div>
 
-            <div class="section-label">
-                <span>06</span>
-                <span>PRECEDENT STUDIES</span>
-            </div>
+      </div>
 
-            <div class="precedent">
+    </div>
 
-                <div class="precedent-image image-placeholder">
-                    <span>FIG. 22 — CHIDORI BUNKA</span>
-                </div>
+  </section>
 
-                <div class="precedent-info">
 
-                    <p class="eyebrow">PRECEDENT 01</p>
 
-                    <h2>Chidori Bunka</h2>
+  <!-- ========================================================
+       PROCESS
+       ======================================================== -->
 
-                    <p class="location">
-                        dot architects — Kitakagaya, Osaka
-                    </p>
+  <section class="project-section">
 
-                    <p>
-                        Chidori Bunka transforms a former industrial building
-                        into an evolving community space. Salvaged materials
-                        are redistributed within the project and artists are
-                        encouraged to construct their own workspaces.
-                    </p>
+    <div class="section-header">
 
-                    <p>
-                        The project informs the proposal's approach to
-                        architecture as a framework for continuous adaptation.
-                    </p>
+      <div class="section-number">
+        10 / PROCESS
+      </div>
 
-                </div>
+      <div>
 
-            </div>
+        <h2 class="section-title">
+          Testing<br>
+          through making.
+        </h2>
 
+        <p class="section-description">
+          Physical models were used to test the relationship between
+          material, connection, scale and construction. The process moved
+          between 1:1, 1:2 and 1:20 investigations.
+        </p>
 
-            <div class="precedent reverse">
+      </div>
 
-                <div class="precedent-image image-placeholder">
-                    <span>FIG. 23 — HANAJU RENOVATION</span>
-                </div>
+    </div>
 
-                <div class="precedent-info">
 
-                    <p class="eyebrow">PRECEDENT 02</p>
+    <div class="process-grid">
 
-                    <h2>Hanaju Renovation</h2>
+      <div>
 
-                    <p class="location">
-                        MARU.architecture — Taito-ku, Tokyo
-                    </p>
+        <div class="image-placeholder">
+          <span>1:1 Model Process</span>
+        </div>
 
-                    <p>
-                        The 150-year-old flower shop combines preserved
-                        elements with a new steel structure.
-                    </p>
+        <div class="process-caption">
+          Model 01 — 1:1
+        </div>
 
-                    <p>
-                        The project demonstrates how old and new can be woven
-                        together rather than separated, creating a form of
-                        dynamic preservation.
-                    </p>
+      </div>
 
-                </div>
 
-            </div>
+      <div>
 
+        <div class="image-placeholder">
+          <span>3D Printing</span>
+        </div>
 
-            <div class="precedent">
+        <div class="process-caption">
+          3D Printed Connection
+        </div>
 
-                <div class="precedent-image image-placeholder">
-                    <span>FIG. 24 — PC CARITAS</span>
-                </div>
+      </div>
 
-                <div class="precedent-info">
 
-                    <p class="eyebrow">PRECEDENT 03</p>
+      <div>
 
-                    <h2>PC Caritas</h2>
+        <div class="image-placeholder">
+          <span>1:2 Reinforcement Model</span>
+        </div>
 
-                    <p class="location">
-                        Architecten De Vylder Vinck Taillieu —
-                        Melle, Belgium
-                    </p>
+        <div class="process-caption">
+          Model 02 — 1:2
+        </div>
 
-                    <p>
-                        New green steel elements visibly identify moments of
-                        intervention and repair.
-                    </p>
+      </div>
 
-                    <p>
-                        This informs the proposal's use of red as a marker of
-                        intervention, distinguishing reinforcement and new
-                        construction from the existing timber structure.
-                    </p>
 
-                </div>
+      <div>
 
-            </div>
+        <div class="image-placeholder">
+          <span>1:20 Model</span>
+        </div>
 
-        </section>
+        <div class="process-caption">
+          Model 03 — 1:20
+        </div>
 
+      </div>
 
-        <!-- =====================================================
-             PRECEDENT APPLICATION
-        ====================================================== -->
+    </div>
 
-        <section class="project-section dark-section">
+  </section>
 
-            <div class="section-heading">
-                <p class="eyebrow">PRECEDENT REFLECTION</p>
-                <h2>Application to Nagi's House</h2>
-            </div>
 
-            <div class="application-grid">
 
-                <div>
-                    <span>01</span>
-                    <h3>Measure</h3>
-                    <p>
-                        Existing structure and condition are documented
-                        before intervention.
-                    </p>
-                </div>
+  <!-- ========================================================
+       FINAL PROPOSAL
+       ======================================================== -->
 
-                <div>
-                    <span>02</span>
-                    <h3>Repair</h3>
-                    <p>
-                        Existing timber is retained wherever possible and
-                        reinforced where necessary.
-                    </p>
-                </div>
+  <section class="final-project">
 
-                <div>
-                    <span>03</span>
-                    <h3>Declare</h3>
-                    <p>
-                        New steel is expressed as a visible layer of
-                        intervention.
-                    </p>
-                </div>
+    <div class="section-number">
+      11 / FINAL PROPOSAL
+    </div>
 
-                <div>
-                    <span>04</span>
-                    <h3>Adapt</h3>
-                    <p>
-                        Temporary scaffolding allows residents to continually
-                        modify the space.
-                    </p>
-                </div>
+    <h2 class="final-title">
+      A living<br>
+      archive.
+    </h2>
 
-            </div>
 
-        </section>
+    <div class="image-placeholder wide-image">
+      <span>Final Exterior / Courtyard Perspective</span>
+    </div>
 
 
-        <!-- =====================================================
-             SITE — NAGI'S HOUSE
-        ====================================================== -->
+    <div class="two-column" style="margin-top: 25px;">
 
-        <section class="project-section">
+      <div class="image-placeholder">
+        <span>Final Structural Drawing</span>
+      </div>
 
-            <div class="section-label">
-                <span>07</span>
-                <span>THE SITE</span>
-            </div>
+      <div class="image-placeholder">
+        <span>Final Scaffolding Drawing</span>
+      </div>
 
-            <div class="section-heading">
+    </div>
 
-                <p class="eyebrow">NAGI'S HOUSE</p>
 
-                <h2>
-                    The Creative Residence
-                </h2>
+    <div class="full-image">
 
-                <p class="japanese">
-                    ナギの家 — 創造的な居住地
-                </p>
+      <div class="image-placeholder wide-image">
+        <span>Final 1:20 Structural Model</span>
+      </div>
 
-            </div>
+    </div>
 
-            <div class="feature-image image-placeholder">
-                <span>FIG. 25 — YUGESHIMA / NAGI'S HOUSE MAP</span>
-            </div>
 
-            <div class="site-information">
+    <div class="two-column" style="margin-top: 25px;">
 
-                <div>
-                    <span>STRUCTURE</span>
-                    <p>2-storey wooden building</p>
-                </div>
+      <div class="image-placeholder">
+        <span>Final 1:2 Intervention Model</span>
+      </div>
 
-                <div>
-                    <span>SITE AREA</span>
-                    <p>206.11 sqm</p>
-                </div>
+      <div class="image-placeholder">
+        <span>Final 1:1 Intervention Model</span>
+      </div>
 
-                <div>
-                    <span>FLOOR AREA</span>
-                    <p>145 sqm</p>
-                </div>
+    </div>
 
-                <div>
-                    <span>AGE</span>
-                    <p>64 years</p>
-                </div>
+  </section>
 
-                <div>
-                    <span>RENT</span>
-                    <p>¥10,000</p>
-                </div>
 
-                <div>
-                    <span>SALE</span>
-                    <p>¥600,000</p>
-                </div>
 
-            </div>
+  <!-- ========================================================
+       REFLECTION
+       ======================================================== -->
 
-        </section>
+  <section class="project-section">
 
+    <div class="section-header">
 
-        <!-- =====================================================
-             SITE PHOTOGRAPHS
-        ====================================================== -->
+      <div class="section-number">
+        12 / REFLECTION
+      </div>
 
-        <section class="project-section">
+      <div>
 
-            <div class="section-heading">
-                <p class="eyebrow">EXISTING CONDITIONS</p>
-                <h2>Nagi's House</h2>
-            </div>
+        <h2 class="section-title">
+          Building through<br>
+          time.
+        </h2>
 
-            <div class="image-grid two-column">
+        <p class="section-description">
+          The project explores preservation not as an attempt to return
+          an existing building to a fixed historical state, but as a means
+          of allowing it to continue developing.
+        </p>
 
-                <div class="image-placeholder tall">
-                    <span>FIG. 26 — EXTERIOR</span>
-                </div>
+        <p class="section-description">
+          Through the combination of aged timber, new steel reinforcement
+          and temporary scaffolding, Nagi's House becomes a framework for
+          continued inhabitation. Its future history is not predetermined;
+          it is created through the people who use it.
+        </p>
 
-                <div class="image-placeholder tall">
-                    <span>FIG. 27 — EXTERIOR</span>
-                </div>
+      </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 28 — INTERIOR</span>
-                </div>
+    </div>
 
-                <div class="image-placeholder">
-                    <span>FIG. 29 — INTERIOR</span>
-                </div>
+  </section>
 
-            </div>
 
-            <div class="text-content narrow">
 
-                <p>
-                    Nagi's House is located within a residential area of
-                    Yugeshima, surrounded by similar houses and other akiya,
-                    accessible through narrow streets and laneways.
-                </p>
+  <!-- ========================================================
+       CLOSING IMAGE
+       ======================================================== -->
 
-                <p>
-                    The existing building retains traditional Japanese
-                    characteristics including timber construction, shoji,
-                    tatami and sliding partitions.
-                </p>
+  <div class="image-placeholder hero-image">
+    <span>Closing Image — Yugeshima</span>
+  </div>
 
-                <p>
-                    The building's weathered exterior and interior traces of
-                    occupation form the material starting point for the
-                    proposal.
-                </p>
 
-            </div>
 
-        </section>
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
 
+  <footer class="project-footer">
 
-        <!-- =====================================================
-             EXISTING FLOOR PLAN
-        ====================================================== -->
+    <a href="index.html">
+      ← BACK TO WORK
+    </a>
 
-        <section class="project-section">
+    <div>
+      JAPAN STUDIO — YUGESHIMA
+    </div>
 
-            <div class="section-heading">
-                <p class="eyebrow">EXISTING BUILDING</p>
-                <h2>Existing Plans & Analysis</h2>
-            </div>
+    <a href="#">
+      TOP ↑
+    </a>
 
-            <div class="feature-image image-placeholder large-placeholder">
-                <span>FIG. 30 — EXISTING FLOOR PLANS</span>
-            </div>
-
-            <div class="image-grid three-column">
-
-                <div class="image-placeholder">
-                    <span>FIG. 31</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 32</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 33</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             PROCESS
-        ====================================================== -->
-
-        <section class="project-section">
-
-            <div class="section-label">
-                <span>08</span>
-                <span>PROCESS & PRODUCTION</span>
-            </div>
-
-            <div class="section-heading">
-
-                <p class="eyebrow">PROCESS</p>
-
-                <h2>
-                    Testing through making.
-                </h2>
-
-            </div>
-
-            <div class="feature-image image-placeholder">
-                <span>FIG. 34 — MODEL PROCESS</span>
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             MODEL 01
-        ====================================================== -->
-
-        <section class="project-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">MODEL 01 — 1:1</p>
-
-                <h2>
-                    Temporary Scaffolding
-                </h2>
-
-            </div>
-
-            <div class="text-content narrow">
-
-                <p>
-                    The 1:1 models explore scaffolding-based interventions
-                    that allow creative residents to construct adaptable,
-                    craft-specific temporary spaces.
-                </p>
-
-                <p>
-                    Standard scaffolding components are repurposed to enable
-                    personalisation, mobility and collaborative work.
-                </p>
-
-            </div>
-
-            <div class="image-grid two-column">
-
-                <div class="image-placeholder">
-                    <span>FIG. 35 — SPRAY PAINTING</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 36 — 1:1 MODEL</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 37 — CONNECTION</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 38 — SCAFFOLDING</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             3D PRINTING
-        ====================================================== -->
-
-        <section class="project-section">
-
-            <div class="section-heading">
-                <p class="eyebrow">FABRICATION</p>
-                <h2>3D Printing</h2>
-            </div>
-
-            <div class="image-grid three-column">
-
-                <div class="image-placeholder">
-                    <span>FIG. 39 — RHINO</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 40 — PRUSASLICER</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 41 — FINAL PRINT</span>
-                </div>
-
-            </div>
-
-            <div class="text-content narrow">
-
-                <p>
-                    The fabrication process involved modelling connection
-                    elements in Rhino, preparing them in PrusaSlicer and
-                    producing them using PLA filament.
-                </p>
-
-                <p>
-                    Errors during fabrication became part of the iterative
-                    design process, requiring physical problem-solving and
-                    refinement.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             MODEL 02
-        ====================================================== -->
-
-        <section class="project-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">MODEL 02 — 1:2</p>
-
-                <h2>
-                    Timber Reinforcement
-                </h2>
-
-            </div>
-
-            <div class="feature-image image-placeholder">
-                <span>FIG. 42 — 1:2 INTERVENTION MODELS</span>
-            </div>
-
-            <div class="text-content narrow">
-
-                <p>
-                    The 1:2 models explore interventions using steel sections
-                    to reinforce aged timber in the akiya.
-                </p>
-
-                <p>
-                    The models balance preservation of the original wood and
-                    its embedded histories with the need for future structural
-                    integrity.
-                </p>
-
-            </div>
-
-            <div class="image-grid three-column">
-
-                <div class="image-placeholder">
-                    <span>FIG. 43 — STEEL</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 44 — TIMBER</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 45 — CONNECTION</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             MODEL 03
-        ====================================================== -->
-
-        <section class="project-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">MODEL 03 — 1:20</p>
-
-                <h2>
-                    Nagi's House
-                </h2>
-
-            </div>
-
-            <div class="text-content narrow">
-
-                <p>
-                    The 1:20 structural model illustrates the overall
-                    arrangement of posts, beams and roof structure.
-                </p>
-
-                <p>
-                    It identifies key intervention points where steel elements
-                    reinforce the existing timber construction system.
-                </p>
-
-            </div>
-
-            <div class="feature-image image-placeholder extra-large-placeholder">
-                <span>FIG. 46 — 1:20 STRUCTURAL MODEL</span>
-            </div>
-
-            <div class="image-grid three-column">
-
-                <div class="image-placeholder">
-                    <span>FIG. 47 — GROUND FLOOR</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 48 — LEVEL ONE</span>
-                </div>
-
-                <div class="image-placeholder">
-                    <span>FIG. 49 — ROOF</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             FINAL DELIVERABLES
-        ====================================================== -->
-
-        <section class="project-section final-section">
-
-            <div class="section-label">
-                <span>09</span>
-                <span>FINAL DELIVERABLES</span>
-            </div>
-
-            <div class="section-heading">
-
-                <p class="eyebrow">FINAL</p>
-
-                <h2>
-                    Architecture as an evolving framework.
-                </h2>
-
-                <p>
-                    The final proposal combines structural reinforcement,
-                    material memory and spatial adaptability to transform
-                    Nagi's House into a creative residence.
-                </p>
-
-            </div>
-
-            <!-- 1:20 MODEL -->
-
-            <div class="deliverable">
-
-                <div class="deliverable-title">
-                    <span>01</span>
-                    <h3>1:20 Structural Model</h3>
-                </div>
-
-                <div class="image-grid two-column">
-
-                    <div class="image-placeholder large-placeholder">
-                        <span>FIG. 50 — 1:20 MODEL</span>
-                    </div>
-
-                    <div class="image-placeholder large-placeholder">
-                        <span>FIG. 51 — 1:20 MODEL</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- 1:2 -->
-
-            <div class="deliverable">
-
-                <div class="deliverable-title">
-                    <span>02</span>
-                    <h3>1:2 Intervention Models</h3>
-                </div>
-
-                <div class="image-grid three-column">
-
-                    <div class="image-placeholder">
-                        <span>FIG. 52</span>
-                    </div>
-
-                    <div class="image-placeholder">
-                        <span>FIG. 53</span>
-                    </div>
-
-                    <div class="image-placeholder">
-                        <span>FIG. 54</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- 1:1 -->
-
-            <div class="deliverable">
-
-                <div class="deliverable-title">
-                    <span>03</span>
-                    <h3>1:1 Intervention Models</h3>
-                </div>
-
-                <div class="image-grid two-column">
-
-                    <div class="image-placeholder large-placeholder">
-                        <span>FIG. 55</span>
-                    </div>
-
-                    <div class="image-placeholder large-placeholder">
-                        <span>FIG. 56</span>
-                    </div>
-
-                    <div class="image-placeholder">
-                        <span>FIG. 57</span>
-                    </div>
-
-                    <div class="image-placeholder">
-                        <span>FIG. 58</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             DRAWINGS
-        ====================================================== -->
-
-        <section class="project-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">DRAWINGS</p>
-
-                <h2>
-                    Architectural Proposal
-                </h2>
-
-            </div>
-
-            <div class="drawing">
-
-                <div class="image-placeholder extra-large-placeholder">
-                    <span>FIG. 59 — COURTYARD PERSPECTIVE</span>
-                </div>
-
-                <p>
-                    Courtyard Perspective Drawing — NTS
-                </p>
-
-            </div>
-
-            <div class="drawing">
-
-                <div class="image-placeholder extra-large-placeholder">
-                    <span>FIG. 60 — STEEL REINFORCEMENT DRAWINGS</span>
-                </div>
-
-                <p>
-                    Steel Reinforcement Intervention Drawings — NTS
-                </p>
-
-            </div>
-
-            <div class="drawing">
-
-                <div class="image-placeholder extra-large-placeholder">
-                    <span>FIG. 61 — SCAFFOLDING INTERVENTION DRAWINGS</span>
-                </div>
-
-                <p>
-                    Scaffolding Intervention Drawings — NTS
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CONCLUSION
-        ====================================================== -->
-
-        <section class="project-conclusion dark-section">
-
-            <div class="section-label">
-                <span>10</span>
-                <span>CONCLUSION</span>
-            </div>
-
-            <div class="conclusion-content">
-
-                <h2>
-                    The building does not need to remain unchanged
-                    to retain its memory.
-                </h2>
-
-                <p>
-                    Through selective reinforcement, material expression and
-                    adaptable interventions, Nagi's House becomes a framework
-                    for continued inhabitation.
-                </p>
-
-                <p>
-                    The project proposes that preservation can occur through
-                    change — allowing the building's history to remain visible
-                    while new inhabitants add their own layer to its story.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             REFERENCES
-        ====================================================== -->
-
-        <section class="project-section references">
-
-            <div class="section-label">
-                <span>11</span>
-                <span>REFERENCES</span>
-            </div>
-
-            <div class="reference-list">
-
-                <p>
-                    01. Dovetail. “Akiya in Japan: The Reality Behind
-                    ‘Abandoned’ Homes.” 2025.
-                </p>
-
-                <p>
-                    02. Jobs in Japan. “Akiya: The Phenomenon of Abandoned
-                    Homes in Japan.”
-                </p>
-
-                <p>
-                    03. Sugita, Mariko. “Chidori-bunka, a New Community Space
-                    by dot architects.” World Architecture Community, 2018.
-                </p>
-
-                <p>
-                    04. Corradi, Marco, Adelaja Israel Osofero, and Antonio
-                    Borri. “Repair and Reinforcement of Historic Timber
-                    Structures with Stainless Steel — A Review.” Metals,
-                    2019.
-                </p>
-
-                <p>
-                    05. E-Housing. “Exploring the Essence of Japanese Tatami
-                    Rooms and Traditional Interiors.” 2024.
-                </p>
-
-                <p>
-                    06. Hobbes, Thomas. De Corpore. Part I. London: J. Bohn,
-                    1839.
-                </p>
-
-                <p>
-                    07. Holl, Steven. Storefront for Art and Architecture.
-                </p>
-
-                <p>
-                    08. Housekey. “How Long Do Japanese Buildings Last?”
-                </p>
-
-                <p>
-                    09. Ji, Nancy Yao. “Return to the Countryside: An
-                    Ethnographic Study of Young Urbanites in Japan’s Shrinking
-                    Regions.” Journal of Rural Studies, 2024.
-                </p>
-
-                <p>
-                    10. Kamijima Life. “#99 Former Store Space on the First
-                    Floor. Two-storey Wooden House in the Centre of Town.”
-                </p>
-
-                <p>
-                    11. MARU.architecture. “Hanaju Renovation.” 2023.
-                </p>
-
-                <p>
-                    12. “PC Caritas, Melle (Belgium).” Arquitectura Viva,
-                    2017.
-                </p>
-
-                <p>
-                    13. Platz, Anemone. “From Social Issue to Art Site and
-                    beyond — Reassessing Rural Akiya Kominka.” Contemporary
-                    Japan, 2024.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             PROJECT FOOTER
-        ====================================================== -->
-
-        <section class="project-footer">
-
-            <div>
-
-                <p class="eyebrow">JAPAN STUDIO</p>
-
-                <h2>
-                    Yugeshima<br>
-                    Creative Residence
-                </h2>
-
-            </div>
-
-            <a href="index.html" class="back-link">
-                ← BACK TO WORK
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer class="site-footer">
-
-        <p>© 2026 CHLOE TAN</p>
-
-        <p>ARCHITECTURE / DESIGN / RESEARCH</p>
-
-    </footer>
+  </footer>
 
 
 </body>
