@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
 
 /* =========================
@@ -15,15 +15,21 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
     background: #f8f9f4;
-    color: #111111;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
+    color: #171717;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 
@@ -40,10 +46,10 @@ header {
 }
 
 .logo {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
 }
 
 nav {
@@ -52,9 +58,8 @@ nav {
 }
 
 nav a {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
     transition: opacity 0.2s ease;
 }
 
@@ -64,192 +69,213 @@ nav a:hover {
 
 
 /* =========================
-   MAIN
+   HOME
 ========================= */
 
-main {
+.home {
     padding: 80px 40px 120px;
 }
 
-
-/* =========================
-   INTRO
-========================= */
-
-.intro {
-    max-width: 900px;
-    margin-bottom: 140px;
+.home-intro {
+    max-width: 760px;
+    margin-bottom: 150px;
 }
 
-.intro h1 {
+.home-label,
+.section-label {
+    font-family: "EB Garamond", serif;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    margin-bottom: 22px;
+}
+
+.home-intro h1 {
     margin: 0 0 30px;
-    font-family: 'EB Garamond', serif;
-    font-size: clamp(55px, 8vw, 120px);
-    line-height: 0.85;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(48px, 7vw, 92px);
     font-weight: 400;
-    letter-spacing: -0.04em;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
 }
 
-.intro p {
-    max-width: 480px;
+.home-intro p {
+    max-width: 520px;
     margin: 0;
-    font-family: 'EB Garamond', serif;
-    font-size: 21px;
+    font-family: "EB Garamond", serif;
+    font-size: 22px;
     line-height: 1.35;
 }
 
 
 /* =========================
-   PROJECT GRID
+   FEATURED PROJECT
 ========================= */
 
-.projects {
+.home-project {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 100px 30px;
+    grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+    gap: 70px;
+    align-items: center;
+    max-width: 1300px;
 }
 
-.project {
+.home-project-image {
+    width: 100%;
+    max-width: 850px;
+}
+
+.home-project-image a {
     display: block;
 }
 
-.project-image {
+.home-project-image img {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background: #e9ebe5;
-    margin-bottom: 18px;
-    overflow: hidden;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 650px;
     object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
 }
 
-.project:hover .project-image img {
-    transform: scale(1.02);
+.home-project-info {
+    max-width: 360px;
 }
 
-.project-info {
+.home-project-info h2 {
+    margin: 0 0 20px;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+.home-project-info p {
+    margin: 0 0 28px;
+    font-family: "EB Garamond", serif;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.project-link {
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
+    border-bottom: 1px solid #171717;
+    padding-bottom: 3px;
+}
+
+.project-link:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================
+   VIEW ALL PROJECTS
+========================= */
+
+.home-projects-link {
+    margin-top: 150px;
+    border-top: 1px solid #171717;
+}
+
+.home-projects-link a {
+    padding: 22px 0;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    gap: 20px;
-}
-
-.project-title {
-    font-family: 'EB Garamond', serif;
+    align-items: center;
+    font-family: "EB Garamond", serif;
     font-size: 21px;
 }
 
-.project-type {
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+.home-projects-link a:hover {
+    opacity: 0.5;
 }
 
 
 /* =========================
-   ABOUT PAGE
+   PROJECTS PAGE
 ========================= */
 
-.about {
-    max-width: 1200px;
-    margin: 0 auto;
+.projects-page {
+    padding: 80px 40px 120px;
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
+.projects-intro {
+    max-width: 900px;
+    margin-bottom: 120px;
 }
 
-.about-image img {
-    width: 100%;
-    display: block;
-}
-
-.about-text h1 {
-    margin: 0 0 40px;
-    font-family: 'EB Garamond', serif;
-    font-size: clamp(50px, 7vw, 100px);
-    line-height: 0.85;
+.projects-intro h1 {
+    margin: 0;
+    font-size: clamp(48px, 7vw, 90px);
     font-weight: 400;
-    letter-spacing: -0.04em;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
 }
 
-.about-text p {
-    max-width: 560px;
-    margin: 0 0 24px;
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
-    line-height: 1.45;
+.project-list {
+    border-top: 1px solid #171717;
+}
+
+.project-list-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 30px;
+    align-items: baseline;
+    padding: 28px 0;
+    border-bottom: 1px solid #171717;
+    transition: opacity 0.2s ease;
+}
+
+.project-list-item:hover {
+    opacity: 0.5;
+}
+
+.project-number {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+}
+
+.project-list-title {
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.project-list-meta {
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
+    text-align: right;
 }
 
 
 /* =========================
-   PROJECT PAGE
+   PROJECT PAGES
 ========================= */
 
 .project-page {
-    padding-top: 60px;
+    padding: 80px 40px 120px;
 }
 
 .project-hero {
-    max-width: 1000px;
-    margin: 0 auto 100px;
-}
-
-.section-label {
-    margin-bottom: 25px;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.project-hero h1 {
-    max-width: 900px;
-    margin: 0;
-    font-family: 'EB Garamond', serif;
-    font-size: clamp(48px, 7vw, 105px);
-    line-height: 0.9;
-    font-weight: 400;
-    letter-spacing: -0.04em;
-}
-
-.project-location {
-    margin-top: 30px;
-    font-family: 'EB Garamond', serif;
-    font-size: 19px;
-}
-
-.project-hero-image {
-    width: 100%;
+    max-width: 1100px;
     margin-bottom: 140px;
 }
 
-.project-hero-image img {
-    width: 100%;
-    display: block;
+.project-hero h1 {
+    margin: 0;
+    max-width: 950px;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(44px, 7vw, 90px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
 }
 
-
-/* =========================
-   PROJECT SECTIONS
-========================= */
-
 .project-section {
-    max-width: 1200px;
-    margin: 0 auto 140px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
+    grid-template-columns: 25% 75%;
+    border-top: 1px solid #171717;
+    padding: 50px 0;
 }
 
 .project-section-text {
@@ -257,69 +283,56 @@ main {
 }
 
 .project-section-text p {
-    margin: 0 0 28px;
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
-    line-height: 1.45;
-}
-
-.project-section-text .large-text {
-    font-size: 30px;
-    line-height: 1.2;
+    margin: 0;
+    font-family: "EB Garamond", serif;
+    font-size: 23px;
+    line-height: 1.4;
 }
 
 
 /* =========================
-   IMAGE GRIDS
+   ABOUT PAGE
 ========================= */
 
-.image-grid {
-    max-width: 1400px;
-    margin: 0 auto 140px;
+.about-page {
+    padding: 80px 40px 120px;
+}
+
+.about-content {
     display: grid;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
 }
 
-.image-grid.two-column {
-    grid-template-columns: repeat(2, 1fr);
+.about-text {
+    max-width: 650px;
 }
 
-.image-grid.three-column {
-    grid-template-columns: repeat(3, 1fr);
+.about-text h1 {
+    margin: 0 0 35px;
+    font-size: clamp(48px, 7vw, 90px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
 }
 
-.image-grid.full-width {
-    grid-template-columns: 1fr;
+.about-text p {
+    font-family: "EB Garamond", serif;
+    font-size: 22px;
+    line-height: 1.4;
+    margin: 0 0 25px;
 }
 
-.image-placeholder {
-    min-height: 400px;
-    background: #e9ebe5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-}
-
-.image-placeholder img {
+.about-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 550px;
 }
 
-
-/* =========================
-   PROJECT END
-========================= */
-
-.project-end {
-    max-width: 1200px;
-    margin: 180px auto 80px;
-    display: flex;
-    justify-content: space-between;
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
+.about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 
@@ -328,27 +341,23 @@ main {
 ========================= */
 
 footer {
-    width: 100%;
-    padding: 30px 40px;
+    border-top: 1px solid #171717;
+    margin: 0 40px;
+    padding: 25px 0 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #dfe1db;
-    font-size: 11px;
-    letter-spacing: 0.03em;
 }
 
-.footer-left {
-    display: block;
+.footer-left,
+.footer-right {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
 }
 
 .footer-right {
     display: flex;
     gap: 28px;
-}
-
-.footer-right a {
-    transition: opacity 0.2s ease;
 }
 
 .footer-right a:hover {
@@ -367,67 +376,74 @@ footer {
     }
 
     nav {
-        gap: 18px;
+        gap: 20px;
     }
 
-    main {
+    .home,
+    .projects-page,
+    .project-page,
+    .about-page {
         padding: 60px 20px 80px;
     }
 
-    .intro {
+    .home-intro {
         margin-bottom: 90px;
     }
 
-    .intro h1 {
-        font-size: 58px;
+    .home-intro h1 {
+        font-size: 52px;
     }
 
-    .projects {
+    .home-project {
         grid-template-columns: 1fr;
-        gap: 70px;
+        gap: 40px;
     }
 
-    .project-info {
-        display: block;
+    .home-project-image {
+        max-width: 100%;
     }
 
-    .project-type {
-        display: block;
-        margin-top: 6px;
+    .home-project-image img {
+        max-height: 450px;
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+    .home-project-info {
+        max-width: 100%;
     }
 
-    .about-text h1 {
-        font-size: 55px;
+    .project-list-item {
+        grid-template-columns: 35px 1fr;
+        gap: 15px;
+    }
+
+    .project-list-meta {
+        grid-column: 2;
+        text-align: left;
     }
 
     .project-section {
         grid-template-columns: 1fr;
-        gap: 30px;
-        margin-bottom: 90px;
+        gap: 25px;
     }
 
-    .image-grid.two-column,
-    .image-grid.three-column {
+    .about-content {
         grid-template-columns: 1fr;
+        gap: 60px;
     }
 
-    .project-end {
-        display: block;
-        margin-top: 100px;
+    .about-image {
+        max-width: 100%;
     }
 
     footer {
-        padding: 25px 20px;
+        margin: 0 20px;
         align-items: flex-start;
         gap: 20px;
     }
 
     .footer-right {
-        gap: 16px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: right;
     }
 }
