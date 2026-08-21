@@ -320,3 +320,194 @@ footer {
     }
 
 }
+/* =========================================================
+   PROJECTS PAGE
+   ========================================================= */
+
+.projects-page {
+    padding-bottom: 120px;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECTS INTRO
+   --------------------------------------------------------- */
+
+.projects-intro {
+    padding: 120px 40px 100px;
+
+    border-bottom: 1px solid #d8d8d5;
+}
+
+.projects-intro h1 {
+    margin-top: 60px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(70px, 10vw, 150px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT CATEGORY
+   --------------------------------------------------------- */
+
+.project-category {
+    padding: 90px 40px 0;
+}
+
+
+/* ---------------------------------------------------------
+   CATEGORY HEADER
+   --------------------------------------------------------- */
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #111;
+
+    margin-bottom: 30px;
+}
+
+.category-header h2 {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.category-header span {
+    font-family: "EB Garamond", Garamond, Georgia, serif;
+
+    font-size: 15px;
+    color: #666;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT LIST ITEM
+   --------------------------------------------------------- */
+
+.project-list-item {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 40px;
+
+    padding-bottom: 70px;
+    margin-bottom: 70px;
+
+    border-bottom: 1px solid #d8d8d5;
+}
+
+.project-list-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT IMAGE
+   --------------------------------------------------------- */
+
+.project-list-image {
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    background: #dcdcd8;
+
+    overflow: hidden;
+
+    transition: opacity 0.3s ease;
+}
+
+.project-list-item:hover .project-list-image {
+    opacity: 0.7;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT INFORMATION
+   --------------------------------------------------------- */
+
+.project-list-info {
+    padding-top: 5px;
+}
+
+.project-list-info h3 {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(24px, 3vw, 42px);
+
+    font-weight: 400;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.035em;
+
+    margin-bottom: 20px;
+}
+
+.project-list-info p {
+    font-family: "EB Garamond", Garamond, Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    color: #666;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .projects-intro {
+        padding: 80px 20px 70px;
+    }
+
+    .projects-intro h1 {
+        margin-top: 40px;
+
+        font-size: clamp(60px, 18vw, 95px);
+    }
+
+
+    .project-category {
+        padding: 60px 20px 0;
+    }
+
+
+    .project-list-item {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding-bottom: 45px;
+        margin-bottom: 45px;
+    }
+
+
+    .project-list-info h3 {
+        font-size: 28px;
+    }
+
+
+    .project-list-info p {
+        font-size: 17px;
+    }
+
+}
