@@ -592,3 +592,19 @@ footer {
     }
 
 }
+
+
+/* SITE IMAGES */
+
+.site-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+.site-image-grid .project-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
